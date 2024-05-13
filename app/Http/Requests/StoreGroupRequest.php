@@ -25,6 +25,7 @@ class StoreGroupRequest extends FormRequest
             'name' =>'required|string|max:255',
             'description' =>'required|string|max:255',
             'code' => "required|string|min:5|max:255",
+            "school" => "required|string|max:255"
         ];
     }
 }

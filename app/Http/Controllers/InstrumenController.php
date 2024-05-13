@@ -9,58 +9,92 @@ use App\Http\Requests\UpdateInstrumenRequest;
 class InstrumenController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Menampilkan daftar instrumen.
      */
     public function index()
     {
-        //
+        try {
+            $instrumen = Instrumen::paginate(5);
+            return view('admin.instrumen.index',compact('instrumen'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Menampilkan form untuk membuat instrumen baru.
      */
     public function create()
     {
-        //
+        try {
+            return view('admin.instrumen.create');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Menyimpan instrumen baru ke dalam penyimpanan.
      */
     public function store(StoreInstrumenRequest $request)
     {
-        //
+        try {
+            Instrumen::create($request->all());
+            return redirect()->route('admin.instrumen.index')->with('success', 'Instrumen berhasil ditambahkan');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
     /**
-     * Display the specified resource.
+     * Menampilkan instrumen yang ditentukan.
      */
     public function show(Instrumen $instrumen)
     {
-        //
+        try {
+            return view('admin.instrumen.show', compact('instrumen'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Menampilkan form untuk mengedit instrumen yang ditentukan.
      */
     public function edit(Instrumen $instrumen)
     {
-        //
+        try {
+            return view('admin.instrumen.edit', compact('instrumen'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
     /**
-     * Update the specified resource in storage.
+     * Memperbarui instrumen yang ditentukan di dalam penyimpanan.
      */
     public function update(UpdateInstrumenRequest $request, Instrumen $instrumen)
     {
-        //
+        try {
+            $data = $request->validated();
+            $instrumen->update($data);
+            return redirect()->route('admin.instrumen.index')->with('success', 'Instrumen berhasil diperbarui');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Menghapus instrumen yang ditentukan dari penyimpanan.
      */
     public function destroy(Instrumen $instrumen)
     {
-        //
+        try {
+            $instrumen->delete();
+            return redirect()->route('admin.instrumen.index')->with('success', 'Instrumen berhasil dihapus');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 }
+

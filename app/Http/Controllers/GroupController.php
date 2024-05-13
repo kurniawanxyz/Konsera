@@ -13,8 +13,8 @@ class GroupController extends Controller
      */
     public function index()
     {
-        $groups = Group::all();
-        return view('groups.index', compact('groups'));
+        $groups = Group::paginate(5);
+        return view('admin.groups.index', compact('groups'));
     }
 
     /**
@@ -22,7 +22,7 @@ class GroupController extends Controller
      */
     public function create()
     {
-        return view('groups.create');
+        return view('admin.groups.create');
     }
 
     /**
@@ -31,7 +31,7 @@ class GroupController extends Controller
     public function store(StoreGroupRequest $request)
     {
         Group::create($request->all());
-        return redirect()->route('groups.index')->with('success', 'Grup berhasil ditambahkan');
+        return redirect()->route('admin.groups.index')->with('success', 'Grup berhasil ditambahkan');
     }
 
     /**
@@ -39,7 +39,7 @@ class GroupController extends Controller
      */
     public function show(Group $group)
     {
-        return view('groups.show', compact('group'));
+        return view('admin.groups.show', compact('group'));
     }
 
     /**
@@ -47,7 +47,7 @@ class GroupController extends Controller
      */
     public function edit(Group $group)
     {
-        return view('groups.edit', compact('group'));
+        return view('admin.groups.edit', compact('group'));
     }
 
     /**
@@ -55,8 +55,9 @@ class GroupController extends Controller
      */
     public function update(UpdateGroupRequest $request, Group $group)
     {
-        $group->update($request->all());
-        return redirect()->route('groups.index')->with('success', 'Grup berhasil diperbarui');
+        $data = $request->validated();
+        $group->update($data);
+        return redirect()->route('admin.groups.index')->with('success', 'Grup berhasil diperbarui');
     }
 
     /**
@@ -65,6 +66,6 @@ class GroupController extends Controller
     public function destroy(Group $group)
     {
         $group->delete();
-        return redirect()->route('groups.index')->with('success', 'Grup berhasil dihapus');
+        return redirect()->route('admin.groups.index')->with('success', 'Grup berhasil dihapus');
     }
 }
