@@ -14,8 +14,8 @@ class InstrumenController extends Controller
     public function index()
     {
         try {
-            $instrumen = Instrumen::paginate(5);
-            return view('admin.instrumen.index',compact('instrumen'));
+            $instrumens = Instrumen::paginate(5);
+            return view('admin.instrumen.index',compact('instrumens'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
@@ -40,7 +40,7 @@ class InstrumenController extends Controller
     {
         try {
             Instrumen::create($request->all());
-            return redirect()->route('admin.instrumen.index')->with('success', 'Instrumen berhasil ditambahkan');
+            return redirect()->route('instruments.index')->with('success', 'Instrumen berhasil ditambahkan');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
@@ -61,9 +61,10 @@ class InstrumenController extends Controller
     /**
      * Menampilkan form untuk mengedit instrumen yang ditentukan.
      */
-    public function edit(Instrumen $instrumen)
+    public function edit(int $instrumen)
     {
         try {
+            $instrumen = Instrumen::findOrFail($instrumen);
             return view('admin.instrumen.edit', compact('instrumen'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -73,12 +74,13 @@ class InstrumenController extends Controller
     /**
      * Memperbarui instrumen yang ditentukan di dalam penyimpanan.
      */
-    public function update(UpdateInstrumenRequest $request, Instrumen $instrumen)
+    public function update(UpdateInstrumenRequest $request, int $instrumen)
     {
         try {
             $data = $request->validated();
+            $instrumen = Instrumen::findOrFail($instrumen);
             $instrumen->update($data);
-            return redirect()->route('admin.instrumen.index')->with('success', 'Instrumen berhasil diperbarui');
+            return redirect()->route('instruments.index')->with('success', 'Instrumen berhasil diperbarui');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }

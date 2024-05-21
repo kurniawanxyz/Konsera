@@ -14,13 +14,21 @@
 	<meta property="og:description" content="Kripton : Crypto Admin Dashboard  Bootstrap 5 Template" />
 	<meta property="og:image" content="social-image.png"/>
 	<meta name="format-detection" content="telephone=no">
-    <title>Dashboard Admin</title>
+    <title>
+        @yield("title")
+    </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
 	<link rel="stylesheet" href="{{ asset('assets/vendor/chartist/css/chartist.min.css') }}">
     <link href="{{ asset('assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets/vendor/owl-carousel/owl.carousel.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/sweetalert2/dist/sweetalert2.min.css')}}" rel="stylesheet">
+    <style>
+        textarea{
+            resize: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -83,7 +91,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-                                Dashboard
+                                @yield("title")
                             </div>
                         </div>
 
@@ -219,12 +227,12 @@
 							<span class="nav-text">Dashboard</span>
 						</a>
 					</li>
-                    <li><a href="{{route('admin.dashboard')}}" class="ai-icon" aria-expanded="false">
+                    <li><a href="{{route('groups.index')}}" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-home-2"></i>
 							<span class="nav-text">Grup</span>
 						</a>
 					</li>
-                    <li><a href="{{route('admin.dashboard')}}" class="ai-icon" aria-expanded="false">
+                    <li><a href="{{route('instruments.index')}}" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-home-2"></i>
 							<span class="nav-text">Instrumen</span>
 						</a>
@@ -251,7 +259,7 @@
         <div class="content-body">
             <!-- row -->
 			<div class="container-fluid">
-
+                @yield("content")
             </div>
         </div>
         <!--**********************************
@@ -303,7 +311,48 @@
 	<script src="{{ asset('assets/vendor/owl-carousel/owl.carousel.js') }}"></script>
     <script src="{{ asset('assets/js/custom.min.js') }}"></script>
 	<script src="{{ asset('assets/js/deznav-init.js') }}"></script>
+    <script src="{{ asset("assets/vendor/sweetalert2/dist/sweetalert2.min.js")}}"></script>
+    <script src="{{ asset('assets/js/plugins-init/sweetalert.init.js')}}"></script>
 	<script>
+                            function handleDelete(url) {
+                                Swal.fire({
+                                    type: 'warning',
+                                    title: 'Apakah Anda yakin?',
+                                    text: "Anda tidak akan dapat mengembalikan ini!",
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#3085d6',
+                                    cancelButtonColor: '#d33',
+                                    confirmButtonText: 'Ya, hapus itu!'
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        $.ajax({
+                                            url: url,
+                                            type: 'DELETE',
+                                            data: {
+                                                _token: '{{ csrf_token() }}'
+                                            },
+                                            success: function(response) {
+                                                Swal.fire(
+                                                    'Terhapus!',
+                                                    'Grup telah dihapus.',
+                                                    'success'
+                                                ).then((result) => {
+                                                    if (result.isConfirmed) {
+                                                        window.location.reload();
+                                                    }
+                                                });
+                                            },
+                                            error: function(xhr) {
+                                                Swal.fire(
+                                                    'Error!',
+                                                    'Gagal menghapus grup.',
+                                                    'error'
+                                                );
+                                            }
+                                        });
+                                    }
+                                });
+                            }
 		function carouselReview(){
 			jQuery('.testimonial-one').owlCarousel({
 				loop:true,

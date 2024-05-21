@@ -31,7 +31,7 @@ class GroupController extends Controller
     public function store(StoreGroupRequest $request)
     {
         Group::create($request->all());
-        return redirect()->route('admin.groups.index')->with('success', 'Grup berhasil ditambahkan');
+        return redirect()->route('groups.index')->with('success', 'Grup berhasil ditambahkan');
     }
 
     /**
@@ -57,7 +57,7 @@ class GroupController extends Controller
     {
         $data = $request->validated();
         $group->update($data);
-        return redirect()->route('admin.groups.index')->with('success', 'Grup berhasil diperbarui');
+        return redirect()->route('groups.index')->with('success', 'Grup berhasil diperbarui');
     }
 
     /**
@@ -66,6 +66,6 @@ class GroupController extends Controller
     public function destroy(Group $group)
     {
         $group->delete();
-        return redirect()->route('admin.groups.index')->with('success', 'Grup berhasil dihapus');
+        return redirect()->route('groups.index')->with('success', 'Grup berhasil dihapus');
     }
 }

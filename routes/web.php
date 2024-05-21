@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GroupController;
+use App\Http\Controllers\InstrumenController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,5 +24,6 @@ Route::post("/register",[AuthController::class,"register"])->name("auth.register
 
 route::prefix("admin")->group(function(){
     route::get("dashboard",fn()=>view("admin.dashboard"))->name("admin.dashboard");
-    route::resource("/groups",GroupController::class);
+    route::resource("groups",GroupController::class);
+    route::resource("instruments",InstrumenController::class);
 });
