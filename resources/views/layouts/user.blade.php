@@ -242,7 +242,7 @@
                                         </svg>
                                         <span class="ms-2">Inbox </span>
                                     </a>
-                                    <a href="page-login.html" class="dropdown-item ai-icon">
+                                    <div class="dropdown-item ai-icon">
                                         <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger"
                                             width="18" height="18" viewBox="0 0 24 24" fill="none"
                                             stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -252,8 +252,11 @@
                                             <line x1="21" y1="12" x2="9" y2="12">
                                             </line>
                                         </svg>
-                                        <span class="ms-2">Logout </span>
-                                    </a>
+                                        <span onclick="handleLogout('formLogout')" class="ms-2">Logout </span>
+                                    </div>
+                                    <form class="d-none" id="formLogout" action="{{route('auth.logout')}}" method="post">
+                                        @csrf
+                                    </form>
                                 </div>
                             </li>
                         </ul>
@@ -364,6 +367,38 @@
     <script src="{{ asset('assets/vendor/sweetalert2/dist/sweetalert2.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins-init/sweetalert.init.js') }}"></script>
     <script>
+        function handleLogout(formId) {
+            Swal.fire({
+                title: 'Apakah Anda yakin ingin Logout ?',
+                text: "Anda tidak akan dapat mengembalikan tindakan ini!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, Logout!'
+            }).then((result) => {
+                if (result) {
+                    $(`#${formId}`).submit();
+                }
+            });
+        }
+
+        function handleConfirmDelete(formId) {
+            Swal.fire({
+                title: 'Apakah Anda yakin?',
+                text: "Anda tidak akan dapat mengembalikan tindakan ini!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, hapus!'
+            }).then((result) => {
+                if (result) {
+                    $(`#${formId}`).submit();
+                }
+            });
+        }
+
         function handleDelete(url) {
             Swal.fire({
                 type: 'warning',

@@ -326,7 +326,9 @@ function handleConfirmDelete(formId)
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Ya, hapus!'
             }).then((result) => {
-                if(result) {
+                console.log(result)
+                alert(result.value)
+                if(result.value) {
                     $(`#${formId}`).submit();
                 }
             });

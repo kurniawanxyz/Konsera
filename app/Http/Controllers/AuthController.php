@@ -44,4 +44,10 @@ class AuthController extends Controller
             return redirect()->back()->with('error', 'Gagal mendaftarkan pengguna');
         }
     }
+
+    public function logout()
+    {
+        auth()->logout();
+        return redirect()->route('auth.page.login')->with("success","Berhasil Logout");
+    }
 }
