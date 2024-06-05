@@ -314,6 +314,23 @@
     <script src="{{ asset("assets/vendor/sweetalert2/dist/sweetalert2.min.js")}}"></script>
     <script src="{{ asset('assets/js/plugins-init/sweetalert.init.js')}}"></script>
 	<script>
+
+function handleConfirmDelete(formId)
+        {
+            Swal.fire({
+                title: 'Apakah Anda yakin?',
+                text: "Anda tidak akan dapat mengembalikan tindakan ini!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, hapus!'
+            }).then((result) => {
+                if(result) {
+                    $(`#${formId}`).submit();
+                }
+            });
+        }
                             function handleDelete(url) {
                                 Swal.fire({
                                     type: 'warning',
@@ -391,6 +408,7 @@
 			}, 1000);
 		});
 	</script>
+    @yield("script")
 </body>
 
 <!-- Mirrored from kripton.dexignzone.com/xhtml/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 May 2024 20:04:46 GMT -->

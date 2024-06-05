@@ -13,12 +13,8 @@ class InstrumenController extends Controller
      */
     public function index()
     {
-        try {
             $instrumens = Instrumen::paginate(5);
             return view('admin.instrumen.index',compact('instrumens'));
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
-        }
     }
 
     /**

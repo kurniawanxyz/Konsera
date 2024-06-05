@@ -4,17 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Instrumen extends Model
+class Criteria extends Model
 {
     use HasFactory;
     protected $guarded = [
 
     ];
-
-    public function criteria(): HasMany
+    public function instrumen():BelongsTo
     {
-        return $this->hasMany(Criteria::class);
+        return $this->belongsTo(Instrumen::class);
     }
 }

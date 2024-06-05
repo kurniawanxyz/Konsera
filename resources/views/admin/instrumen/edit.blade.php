@@ -14,12 +14,6 @@
      <a href="{{route('instruments.index')}}" class="btn btn-primary">Kembali</a>
     </div>
 </div>
-<div class="page-titles mx-0 d-flex">
-    <a href="{{ route('instruments.edit',$instrumen->id) }}" class="btn {{ request()->routeIs('instruments.edit',$instrumen->id) ? 'btn-primary' : 'btn-outline-primary' }}">Instrumen</a>
-    <a href="{{ route('groups.index') }}" class="btn {{ request()->routeIs('groups.index') ? 'btn-primary' : 'btn-outline-primary' }}">Opsi Jawaban</a>
-    <a href="{{ route('groups.index') }}" class="btn {{ request()->routeIs('groups.index') ? 'btn-primary' : 'btn-outline-primary' }}">Kriteria</a>
-    <a href="{{ route('groups.index') }}" class="btn {{ request()->routeIs('groups.index') ? 'btn-primary' : 'btn-outline-primary' }}">Sub Variabel Penilaian</a>
-</div>
 <div class="">
     <form action="{{route('instruments.update', '')}}/{{$instrumen->id}}" method="post">
         @csrf
