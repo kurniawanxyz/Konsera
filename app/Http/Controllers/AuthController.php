@@ -21,14 +21,15 @@ class AuthController extends Controller
         $user = $this->user->where('email', $request['email'])->first();
 
         if (!$user) {
-            return redirect()->back()->with("error","User tidak ditemukan");
+            return redirect()->back()->with("error", "User tidak ditemukan");
         }
 
         if (!password_verify($request['password'], $user->password)) {
-            return redirect()->back()->with("error","Terdapat kesalahan pada email atau password");
+            return redirect()->back()->with("error", "Terdapat kesalahan pada email atau password");
         }
+
         if ($user->role == 'admin') {
-            return redirect()->route("admin.dashboard")->with("success","Berhasil Login");
+            return redirect()->route("admin.dashboard")->with("success", "Berhasil Login");
         } else {
             return redirect()->route('user.dashboard');
         }
