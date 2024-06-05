@@ -6,6 +6,7 @@ use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -28,12 +29,16 @@ class AuthController extends Controller
             return redirect()->back()->with("error", "Terdapat kesalahan pada email atau password");
         }
 
-        if ($user->role == 'admin') {
-            return redirect()->route("admin.dashboard")->with("success", "Berhasil Login");
-        } else {
-            return redirect()->route('user.dashboard');
+        if (Auth::attempt($request)) {
+            $user = Auth::user();
+            if ($user->role == 'admin') {
+                return redirect()->route("admin.dashboard")->with("success", "Berhasil Login");
+            } else {
+                return redirect()->route('user.dashboard');
+            }
         }
     }
+
     public function register(RegisterRequest $request)
     {
         $request = $request->validated();
@@ -48,6 +53,6 @@ class AuthController extends Controller
     public function logout()
     {
         auth()->logout();
-        return redirect()->route('auth.page.login')->with("success","Berhasil Logout");
+        return redirect()->route('auth.page.login')->with("success", "Berhasil Logout");
     }
 }
