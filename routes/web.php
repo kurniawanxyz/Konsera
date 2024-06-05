@@ -26,31 +26,36 @@ Route::get("/register", fn () => view("auth.register"))->name("auth.page.registe
 Route::post("/register", [AuthController::class, "register"])->name("auth.register");
 
 // Route Admin
-route::prefix("admin")->group(function () {
-    route::get("dashboard", fn () => view("admin.dashboard"))->name("admin.dashboard");
-    route::resource("groups", GroupController::class);
-    route::resource("instruments", InstrumenController::class);
+// route::prefix("admin")->group(function () {
+//     route::get("dashboard", fn () => view("admin.dashboard"))->name("admin.dashboard");
+//     route::resource("groups", GroupController::class);
+//     route::resource("instruments", InstrumenController::class);
+// });
+
+
+Route::middleware("auth")->group(function(){
+  Route::post("/logout",[AuthController::class,"logout"])->name("auth.logout");
 });
 
 // Route User
-route::prefix('user')->group(function () {
-    route::get('dashboard', [DashboardUserController::class, 'index'])->name('user.dashboard');
-    route::resource("user-groups", UserGroupController::class);
-    route::resource("user-instruments", UserInstrumentController::class);
+Route::prefix('user')->group(function () {
+    Route::get('dashboard', [DashboardUserController::class, 'index'])->name('user.dashboard');
+    Route::resource("user-groups", UserGroupController::class);
+    Route::resource("user-instruments", UserInstrumentController::class);
 
 });
 
-route::prefix("admin")->group(function(){
-    route::get("dashboard",fn()=>view("admin.dashboard"))->name("admin.dashboard");
-    route::resource("groups",GroupController::class);
-    route::resource("instruments",InstrumenController::class);
-    route::controller(CriteriaController::class)->group(function(){
-        route::get("criteria/{instrumen_id}","index")->name("criteria.index");
-        route::get("criteria/create/{instrumen_id}","create")->name("criteria.create");
-        route::post("criteria/store/{instrumen_id}","store")->name("criteria.store");
-        route::get("criteria/{criteria}/show","show")->name("criteria.show");
-        route::get("criteria/{criteria}/edit","edit")->name("criteria.edit");
-        route::put("criteria/{criteria}/update","update")->name("criteria.update");
-        route::delete("criteria/{criteria}/destroy","destroy")->name("criteria.destroy");
+Route::prefix("admin")->group(function(){
+    Route::get("dashboard",fn()=>view("admin.dashboard"))->name("admin.dashboard");
+    Route::resource("groups",GroupController::class);
+    Route::resource("instruments",InstrumenController::class);
+    Route::controller(CriteriaController::class)->group(function(){
+        Route::get("criteria/{instrumen_id}","index")->name("criteria.index");
+        Route::get("criteria/create/{instrumen_id}","create")->name("criteria.create");
+        Route::post("criteria/store/{instrumen_id}","store")->name("criteria.store");
+        Route::get("criteria/{criteria}/show","show")->name("criteria.show");
+        Route::get("criteria/{criteria}/edit","edit")->name("criteria.edit");
+        Route::put("criteria/{criteria}/update","update")->name("criteria.update");
+        Route::delete("criteria/{criteria}/destroy","destroy")->name("criteria.destroy");
     });
 });
