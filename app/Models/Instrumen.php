@@ -17,4 +17,9 @@ class Instrumen extends Model
     {
         return $this->hasMany(Criteria::class);
     }
+
+    public function sub_criterias(): HasMany
+    {
+        return $this->hasMany(SubKriteria::class);
+    }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\CriteriaController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\InstrumenController;
+use App\Http\Controllers\SubKriteriaController;
 use App\Http\Controllers\UserGroupController;
 use App\Http\Controllers\UserInstrumentController;
 use Illuminate\Support\Facades\Route;
@@ -57,5 +58,14 @@ Route::prefix("admin")->group(function(){
         Route::get("criteria/{criteria}/edit","edit")->name("criteria.edit");
         Route::put("criteria/{criteria}/update","update")->name("criteria.update");
         Route::delete("criteria/{criteria}/destroy","destroy")->name("criteria.destroy");
+    });
+    Route::controller(SubKriteriaController::class)->group(function(){
+        Route::get("subCriteria/{instrumen_id}","index")->name("subCriteria.index");
+        Route::get("subCriteria/create/{instrumen_id}","create")->name("subCriteria.create");
+        Route::post("subCriteria/store/{instrumen_id}","store")->name("subCriteria.store");
+        Route::get("subCriteria/{subCriteria}/show","show")->name("subCriteria.show");
+        Route::get("subCriteria/{subCriteria}/edit","edit")->name("subCriteria.edit");
+        Route::put("subCriteria/{subCriteria}/update","update")->name("subCriteria.update");
+        Route::delete("subCriteria/{subCriteria}/destroy","destroy")->name("subCriteria.destroy");
     });
 });

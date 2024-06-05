@@ -46,6 +46,7 @@
                                 <button class="dropdown-item" type="submit">Delete</button>
                             </form>
                             <a class="dropdown-item" href="{{route('criteria.index',$item->id)}}">Kriteria</a>
+                            <a class="dropdown-item" href="{{route('subCriteria.index',$item->id)}}">Sub Kriteria</a>
                         </div>
                     </div>
                 </td>
