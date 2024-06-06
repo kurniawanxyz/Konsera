@@ -4,30 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Instrumen extends Model
+class Statement extends Model
 {
     use HasFactory;
-    protected $guarded = [
 
-    ];
+    protected $guarded=[];
 
-    public function criteria(): HasMany
+    public function subCriteria()
     {
-        return $this->hasMany(Criteria::class);
+        return $this->belongsTo(SubKriteria::class);
     }
-
-    public function sub_criterias(): HasMany
+    public function instrument()
     {
-        return $this->hasMany(SubKriteria::class);
+        return $this->belongsTo(Instrumen::class);
     }
-
-    public function statements(): HasMany
-    {
-        return $this->hasMany(Statement::class);
-    }
-
     public static function createOrUpdate(array $searchAttributes, array $updateAttributes)
     {
         // Temukan item berdasarkan atribut pencarian
@@ -43,5 +34,4 @@ class Instrumen extends Model
 
         return $item;
     }
-
 }

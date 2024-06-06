@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RequestImportStatements;
 use App\Models\SubKriteria;
 use App\Http\Requests\StoreSubKriteriaRequest;
 use App\Http\Requests\UpdateSubKriteriaRequest;
+use App\Imports\PernyataanImport;
 use Exception;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SubKriteriaController extends Controller
 {
@@ -48,6 +51,18 @@ class SubKriteriaController extends Controller
     public function show(SubKriteria $subKriteria)
     {
         //
+    }
+
+    public function import(RequestImportStatements $req ,$instrumen_id)
+    {
+        try{
+            $excel = $req->file("excel");
+            Excel::import(new PernyataanImport($instrumen_id),$excel);
+            return back()->with("success","Berhasil menambahkan data");
+        }catch(Exception $e)
+        {
+            return back()->with("error",$e->getMessage());
+        }
     }
 
     /**

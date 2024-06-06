@@ -3,6 +3,32 @@
     Sub Kriteria
 @endsection
 @section("content")
+
+<div class="modal fade" id="basicModal" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="{{route('subCriteria.import',$instrumen_id)}}" method="post" enctype="multipart/form-data">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+            </div>
+            <div class="modal-body">
+                    @csrf
+                    <div class="d-flex flex-column mt-3">
+                        <label for="excel" class="form-label">File Excel</label>
+                        <input type="file" name="excel" id="excel" class="form-control-file">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <div class="row page-titles mx-0">
     <div class="col-sm-6 p-md-0">
         <div class="welcome-text">
@@ -13,6 +39,7 @@
     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex gap-3">
      <a href="{{route('instruments.index')}}" class="btn btn-outline-primary">Kembali</a>
      <a href="{{route('subCriteria.create',$instrumen_id)}}" class="btn btn-primary">Tambah</a>
+     <button data-bs-toggle="modal" data-bs-target="#basicModal" class="btn btn-success">Tambah Pernyataan</button>
     </div>
 </div>
 <div>
@@ -36,6 +63,7 @@
                     @csrf
                     @method('DELETE')
                 </form>
+                <a href="{{ route('statements.index', $item->id) }}" class="btn btn-success">Statement</a>
             </td>
         </tr>
         @empty

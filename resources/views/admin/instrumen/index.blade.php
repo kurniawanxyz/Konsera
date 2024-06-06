@@ -47,6 +47,7 @@
                             </form>
                             <a class="dropdown-item" href="{{route('criteria.index',$item->id)}}">Kriteria</a>
                             <a class="dropdown-item" href="{{route('subCriteria.index',$item->id)}}">Sub Kriteria</a>
+                            {{-- <a class="dropdown-item" href="{{route('subCriteria.index',$item->id)}}">Statement</a> --}}
                         </div>
                     </div>
                 </td>

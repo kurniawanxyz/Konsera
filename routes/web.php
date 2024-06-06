@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\CriteriaController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\InstrumenController;
+use App\Http\Controllers\StatementController;
 use App\Http\Controllers\SubKriteriaController;
 use App\Http\Controllers\UserGroupController;
 use App\Http\Controllers\UserInstrumentController;
@@ -67,5 +68,15 @@ Route::prefix("admin")->group(function(){
         Route::get("subCriteria/{subCriteria}/edit","edit")->name("subCriteria.edit");
         Route::put("subCriteria/{subCriteria}/update","update")->name("subCriteria.update");
         Route::delete("subCriteria/{subCriteria}/destroy","destroy")->name("subCriteria.destroy");
+        Route::post("subCriteriaImport/{instrumen_id}",[SubKriteriaController::class,"import"])->name("subCriteria.import");
+    });
+    Route::controller(StatementController::class)->group(function(){
+        Route::get("statements/{sub_criteria_id}","index")->name("statements.index");
+        Route::get("statements/create/{sub_criteria_id}","create")->name("statements.create");
+        Route::post("statements/store/{sub_criteria_id}","store")->name("statements.store");
+        Route::get("statements/{statements}/show","show")->name("statements.show");
+        Route::get("statements/{statements}/edit","edit")->name("statements.edit");
+        Route::put("statements/{statements}/update","update")->name("statements.update");
+        Route::delete("statements/{statements}/destroy","destroy")->name("statements.destroy");
     });
 });
