@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\CriteriaController;
@@ -77,5 +78,23 @@ Route::prefix("admin")->middleware('auth')->group(function () {
         Route::get("statements/{statements}/edit","edit")->name("statements.edit");
         Route::put("statements/{statements}/update","update")->name("statements.update");
         Route::delete("statements/{statements}/destroy","destroy")->name("statements.destroy");
+    });
+    Route::controller(StatementController::class)->group(function(){
+        Route::get("statements/{sub_criteria_id}","index")->name("statements.index");
+        Route::get("statements/create/{sub_criteria_id}","create")->name("statements.create");
+        Route::post("statements/store/{sub_criteria_id}","store")->name("statements.store");
+        Route::get("statements/{statements}/show","show")->name("statements.show");
+        Route::get("statements/{statements}/edit","edit")->name("statements.edit");
+        Route::put("statements/{statements}/update","update")->name("statements.update");
+        Route::delete("statements/{statements}/destroy","destroy")->name("statements.destroy");
+    });
+    Route::controller(AnswerController::class)->group(function(){
+        Route::get("answer/{instrumen_id}","index")->name("answer.index");
+        Route::get("answer/create/{instrumen_id}","create")->name("answer.create");
+        Route::post("answer/store/{instrumen_id}","store")->name("answer.store");
+        Route::get("answer/{answer}/show","show")->name("answer.show");
+        Route::get("answer/{answer}/edit","edit")->name("answer.edit");
+        Route::put("answer/{answer}/update","update")->name("answer.update");
+        Route::delete("answer/{answer}/destroy","destroy")->name("answer.destroy");
     });
 });

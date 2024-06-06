@@ -28,20 +28,9 @@ class Instrumen extends Model
         return $this->hasMany(Statement::class);
     }
 
-    public static function createOrUpdate(array $searchAttributes, array $updateAttributes)
+    public function answer(): HasMany
     {
-        // Temukan item berdasarkan atribut pencarian
-        $item = static::where($searchAttributes)->first();
-
-        // Jika item ditemukan, lakukan update
-        if ($item) {
-            $item->update($updateAttributes);
-        } else {
-            // Jika tidak ditemukan, buat item baru
-            $item = static::create(array_merge($searchAttributes, $updateAttributes));
-        }
-
-        return $item;
+        return $this->hasMany(Answer::class);
     }
 
 }

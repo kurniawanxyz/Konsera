@@ -232,12 +232,12 @@
 						</a>
 					</li>
                     <li><a href="{{route('groups.index')}}" class="ai-icon" aria-expanded="false">
-							<i class="flaticon-381-home-2"></i>
+							<i class="flaticon-381-user-3"></i>
 							<span class="nav-text">Grup</span>
 						</a>
 					</li>
                     <li><a href="{{route('instruments.index')}}" class="ai-icon" aria-expanded="false">
-							<i class="flaticon-381-home-2"></i>
+							<i class="flaticon-381-book"></i>
 							<span class="nav-text">Instrumen</span>
 						</a>
 					</li>
