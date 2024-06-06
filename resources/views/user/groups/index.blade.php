@@ -5,4 +5,5 @@
 @endsection
 
 @section('content')
+    <livewire:user.groups.index />
 @endsection
