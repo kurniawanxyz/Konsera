@@ -5,4 +5,7 @@
 @endsection
 
 @section('content')
+    {{-- Livewire Index Component --}}
+        <livewire:user.components.group-list />
+    {{-- Livewire Index Component --}}
 @endsection

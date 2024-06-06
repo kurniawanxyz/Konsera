@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Livewire\User\Groups;
+namespace App\Livewire\User\Components;
 
 use App\Models\Group;
 use App\Models\User;
 use Livewire\Component;
 
-class Index extends Component
+class Navbar extends Component
 {
-
     public $groupCode;
     public $checkGroup;
     public $text;
@@ -44,6 +43,8 @@ class Index extends Component
             if ($group->isMember() == true) {
                 $this->text = 'Anda adalah anggota group ini!';
                 $this->resetExcept('text', 'class');
+
+                $this->dispatch('joined-group', message: 'Berhasil bergabung dengan grup');
             } else {
                 $user_id = auth()->id();
                 User::findOrFail($user_id)->groups()->sync($group->id);
@@ -61,6 +62,6 @@ class Index extends Component
 
     public function render()
     {
-        return view('livewire.user.groups.index');
+        return view('livewire.user.components.navbar');
     }
 }
