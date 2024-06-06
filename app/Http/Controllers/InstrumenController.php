@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RequestAddAccessGroup;
 use App\Models\Instrumen;
 use App\Http\Requests\StoreInstrumenRequest;
 use App\Http\Requests\UpdateInstrumenRequest;
+use App\Models\Group;
 
 class InstrumenController extends Controller
 {
@@ -15,6 +17,11 @@ class InstrumenController extends Controller
     {
             $instrumens = Instrumen::paginate(5);
             return view('admin.instrumen.index',compact('instrumens'));
+    }
+
+    public function addGroup(RequestAddAccessGroup $req, $instrumen_id)
+    {
+
     }
 
     /**
@@ -61,7 +68,8 @@ class InstrumenController extends Controller
     {
         try {
             $instrumen = Instrumen::findOrFail($instrumen);
-            return view('admin.instrumen.edit', compact('instrumen'));
+            $groups = Group::all();
+            return view('admin.instrumen.edit', compact('instrumen','groups'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
@@ -75,6 +83,12 @@ class InstrumenController extends Controller
         try {
             $data = $request->validated();
             $instrumen = Instrumen::findOrFail($instrumen);
+            if(isset($data['groups'])){
+                $groups = $data['groups'];
+                unset($data["groups"]);
+            }else{
+                $instrumen->groups()->sync([]);
+            }
             $instrumen->update($data);
             return redirect()->route('instruments.index')->with('success', 'Instrumen berhasil diperbarui');
         } catch (\Exception $e) {

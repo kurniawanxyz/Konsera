@@ -20,8 +20,6 @@
             <tr>
                 <th>No</th>
                 <th>Judul</th>
-                <th>Jumlah Grup</th>
-                <th>Jumlah Peserta</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -30,8 +28,6 @@
             <tr>
                 <td>{{$i+1}}</td>
                 <td>{{$item->title}}</td>
-                <td>0</td>
-                <td>0</td>
                 <td>
                     <div class="dropdown">
                         <button type="button" class="btn  light sharp" data-bs-toggle="dropdown" aria-expanded="false">
@@ -47,7 +43,7 @@
                             </form>
                             <a class="dropdown-item" href="{{route('criteria.index',$item->id)}}">Kriteria</a>
                             <a class="dropdown-item" href="{{route('subCriteria.index',$item->id)}}">Sub Kriteria</a>
-                            <a class="dropdown-item" href="{{route('answer.index',$item->id)}}">Answer</a>
+                            <a class="dropdown-item" href="{{route('answer.index',$item->id)}}">Opsi Jawaban</a>
                         </div>
                     </div>
                 </td>

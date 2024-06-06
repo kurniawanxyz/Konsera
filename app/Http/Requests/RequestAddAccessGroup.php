@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateInstrumenRequest extends FormRequest
+class RequestAddAccessGroup extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,18 +22,7 @@ class UpdateInstrumenRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'string|max:255',
-            'description' => 'string',
-            "groups" => "array"
-        ];
-    }
-
-    public function messages(): array
-    {
-        return [
-            'title.string' => 'Judul harus berupa teks',
-            'title.max' => 'Judul tidak boleh lebih dari 255 karakter',
-            'description.string' => 'Deskripsi harus berupa teks',
+            "group_id" => "array|required"
         ];
     }
 }

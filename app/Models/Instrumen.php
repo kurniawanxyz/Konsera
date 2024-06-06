@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Instrumen extends Model
@@ -31,6 +32,11 @@ class Instrumen extends Model
     public function answer(): HasMany
     {
         return $this->hasMany(Answer::class);
+    }
+
+    public function groups()
+    {
+        return $this->BelongsToMany(Group::class,'groups_to_instruments');
     }
 
 }

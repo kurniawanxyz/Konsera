@@ -1,13 +1,13 @@
 @extends("layouts.admin")
 @section("title")
-    Answer
+    Opsi Jawaban
 @endsection
 @section("content")
 <div class="row page-titles mx-0">
     <div class="col-sm-6 p-md-0">
         <div class="welcome-text">
-            <h4>Answer</h4>
-            <p class="mb-0">Answer yang tersedia pada instrumen yang anda pilih</p>
+            <h4>Opsi Jawaban</h4>
+            <p class="mb-0">Opsi Jawaban yang tersedia pada instrumen yang anda pilih</p>
         </div>
     </div>
     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex gap-3">

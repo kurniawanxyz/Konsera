@@ -30,4 +30,9 @@ class Group extends Model
     {
         return $this->user()->where('user_id', auth()->id())->exists();
     }
+
+    public function instrumens()
+    {
+        return $this->belongsToMany(Instrumen::class, 'groups_to_instruments');
+    }
 }

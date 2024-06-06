@@ -32,9 +32,31 @@
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
+        <div class="d-flex flex-column mt-3">
+            <label for="groups" class="form-label">Hak Akses Grup</label>
+            <select multiple class="form-select py-2" name="groups[]" id="groups">
+                @php
+                    $groupAccess = $instrumen->groups()->pluck("id")->toArray();
+                @endphp
+                {{-- <option disabled selected >Pilih Group</option> --}}
+                @forelse ($groups as $item )
+                    <option @selected(in_array($item->id,$groupAccess)) value="{{$item->id}}">{{$item->name}}</option>
+                @empty
+
+                @endforelse
+            </select>
+        </div>
         <div class="d-flex justify-content-end mt-3">
             <button class="btn btn-primary">Submit</button>
         </div>
     </form>
 </div>
+@endsection
+
+@section("script")
+    <script>
+        $("#groups").select2({
+
+        })
+    </script>
 @endsection
