@@ -24,7 +24,8 @@ class UpdateInstrumenRequest extends FormRequest
         return [
             'title' => 'string|max:255',
             'description' => 'string',
-            "groups" => "array"
+            "groups" => "array",
+            "isPublished" => "in:1,0"
         ];
     }
 

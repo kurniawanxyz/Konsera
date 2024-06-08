@@ -69,6 +69,7 @@ class InstrumenController extends Controller
         try {
             $instrumen = Instrumen::findOrFail($instrumen);
             $groups = Group::all();
+            // dd($instrumen->groups);
             return view('admin.instrumen.edit', compact('instrumen','groups'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -83,9 +84,11 @@ class InstrumenController extends Controller
         try {
             $data = $request->validated();
             $instrumen = Instrumen::findOrFail($instrumen);
+            // dd($data);
             if(isset($data['groups'])){
                 $groups = $data['groups'];
                 unset($data["groups"]);
+                $instrumen->groups()->sync($groups);
             }else{
                 $instrumen->groups()->sync([]);
             }
