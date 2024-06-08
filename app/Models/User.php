@@ -61,4 +61,14 @@ class User extends Authenticatable
                     ->withPivot('instrumen_id', 'points')
                     ->withTimestamps();
     }
+    /**
+     * Fungsi untuk mengecek apakah user adalah anggota grup terkait
+     *
+     * @param  mixed $group_id
+     * @return void
+     */
+    public function isMember($group_id)
+    {
+        return $this->groups()->where('group_id', $group_id)->exists();
+    }
 }

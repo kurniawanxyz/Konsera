@@ -22,13 +22,23 @@ class Group extends Model
     }
 
     /**
+     * Fungsi untuk mendapatkan anggota yang sedang login
+     *
+     * @return object
+     */
+    public function authMember(): object
+    {
+        return $this->user()->where('user_id', auth()->id());
+    }
+
+    /**
      * Fungsi untuk mengecek apakah user yang sedang login merupakan anggota grup
      *
      * @return void
      */
     public function isMember()
     {
-        return $this->user()->where('user_id', auth()->id())->exists();
+        return $this->authMember()->exists();
     }
 
     public function instrumens()

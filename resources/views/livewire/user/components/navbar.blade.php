@@ -35,17 +35,9 @@
 
                     <ul class="navbar-nav header-right">
                         <li class="nav-item">
-                            <div class="input-group search-area d-xl-inline-flex d-none">
-                                <div class="input-group-append">
-                                    <button class="input-group-text"><i class="flaticon-381-search-2"></i></button>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Search here...">
-                            </div>
-                        </li>
-                        <li class="nav-item">
                             {{-- Button Gabung Group --}}
                             <button class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#join-group">Bergabung</button>
+                                data-bs-target="#join-group">Gabung Grup</button>
                             {{-- Button Gabung Group --}}
                         </li>
 
