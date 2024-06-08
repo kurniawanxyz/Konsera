@@ -2,10 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Group;
+use App\Models\User;
+use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserGroupController extends Controller
 {
+
+    public function __construct(private Group $groups)
+    {
+        $this->groups = $groups;
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -35,7 +45,18 @@ class UserGroupController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $id = decrypt($id);
+        $user = User::find(Auth::id());
+
+        if ($user->isMember($id) == true) {
+            $group = $this->groups->findOrFail($id)
+                ->with('user', 'instrumens')
+                ->first();
+
+            return view('user.groups.show', compact('group'));
+        } else {
+            return redirect()->route('user.dashboard');
+        }
     }
 
     /**

@@ -7,20 +7,18 @@
                         <span class="nav-text">Dashboard</span>
                     </a>
                 </li>
-                <li><a wire:navigate href="{{ route('user-instruments.index') }}" class="ai-icon" aria-expanded="false">
-                        <i class="flaticon-381-home-2"></i>
-                        <span class="nav-text">Instrumen</span>
-                    </a>
-                </li>
                 <li class="mm-active">
                     <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                        <i class="flaticon-381-internet"></i>
+                        <i class="flaticon-381-user-3"></i>
                         <span class="nav-text">Grup</span>
                     </a>
                     <ul aria-expanded="false">
                         @forelse ($groups as $item)
                             <li>
-                                <a href="{{ route('groups.show', encrypt($item->id)) }}">{{ $item->name }}</a>
+                                <a href="{{ route('user-groups.show', ['user_group' => encrypt($item->id)]) }}"
+                                    wire:navigate @if (request()->routeIs('user-groups.show', ['user_group' => encrypt($item->id)])) class="mm-active" @endif>
+                                    {{ $item->name }}
+                                </a>
                             </li>
                         @empty
                             <li>

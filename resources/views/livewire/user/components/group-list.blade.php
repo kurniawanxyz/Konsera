@@ -11,9 +11,10 @@
                     </div>
                     <div class="card-footer d-sm-flex justify-content-between align-items-center">
                         <div class="card-footer-link mb-4 mb-sm-0">
-                            <p class="card-text text-dark d-inline">{{ $item->created_at->diffForHumans() }}</p>
+                            <p class="card-text text-dark d-inline">Bergabung pada {{ $item->pivot->created_at->diffForHumans() }}</p>
                         </div>
-                        <a href="{{ route('groups.show', encrypt($item->id)) }}" class="btn btn-primary">Masuk</a>
+                        <a href="{{ route('user-groups.show', ['user_group' => encrypt($item->id)]) }}"
+                            class="btn btn-primary" wire:navigate>Masuk</a>
                     </div>
                 </div>
             </div>

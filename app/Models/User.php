@@ -49,4 +49,15 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Group::class, 'user_groups')->withTimestamps();
     }
+
+    /**
+     * Fungsi untuk mengecek apakah user adalah anggota grup terkait
+     *
+     * @param  mixed $group_id
+     * @return void
+     */
+    public function isMember($group_id)
+    {
+        return $this->groups()->where('group_id', $group_id)->exists();
+    }
 }
