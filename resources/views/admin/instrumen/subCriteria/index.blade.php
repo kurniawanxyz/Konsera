@@ -58,12 +58,12 @@
             <td>{{ $item->text }}</td>
             <td>
                 <a href="{{ route('subCriteria.edit', $item->id) }}" class="btn btn-warning">Edit</a>
-                <button type="button" onclick="handleConfirmDelete('deleteSubCriteria')" class="btn btn-danger">Delete</button>
+                <button type="button" onclick="handleConfirmDelete('deleteSubCriteria')" class="btn btn-danger">Hapus</button>
                 <form id="deleteSubCriteria" action="{{ route('subCriteria.destroy', $item->id) }}" method="POST" class="d-none" style="display:inline;">
                     @csrf
                     @method('DELETE')
                 </form>
-                <a href="{{ route('statements.index', $item->id) }}" class="btn btn-success">Statement</a>
+                <a href="{{ route('statements.index', $item->id) }}" class="btn btn-success">Pernyataan</a>
             </td>
         </tr>
         @empty

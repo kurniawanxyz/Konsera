@@ -39,4 +39,9 @@ class Instrumen extends Model
         return $this->BelongsToMany(Group::class,'groups_to_instruments');
     }
 
+    public function pengerjaan_user():BelongsToMany
+    {
+        return $this->belongsToMany(User::class,'pengerjaan')->withPivot(["points"]);
+    }
+
 }

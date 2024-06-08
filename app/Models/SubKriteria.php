@@ -17,7 +17,7 @@ class SubKriteria extends Model
 
     public function statements()
     {
-        return $this->belongsTo(Statement::class);
+        return $this->hasMany(Statement::class);
     }
 
     public static function createOrUpdate(array $searchAttributes, array $updateAttributes)

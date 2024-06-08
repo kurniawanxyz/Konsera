@@ -12,9 +12,9 @@
                         <span class="nav-text">Instrumen</span>
                     </a>
                 </li>
-                <li class="mm-active">
+                <li class="">
                     <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                        <i class="flaticon-381-internet"></i>
+                        <i class="flaticon-381-user"></i>
                         <span class="nav-text">Grup</span>
                     </a>
                     <ul aria-expanded="false">
@@ -29,6 +29,11 @@
                         @endforelse
                     </ul>
                 </li>
+                <li><a wire:navigate href="{{ route('rekap.index') }}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-book"></i>
+                    <span class="nav-text">Rekap Pengerjaan</span>
+                </a>
+            </li>
             </ul>
         </div>
     </div>

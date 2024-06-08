@@ -49,4 +49,16 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Group::class, 'user_groups')->withTimestamps();
     }
+
+    public function pengerjaanByInstrumen(): BelongsToMany
+    {
+        return $this->belongsToMany(Instrumen::class, 'pengerjaan')->withPivot(["group_id","points"]);
+    }
+
+    public function pengerjaanByGroup(): BelongsToMany
+    {
+        return $this->belongsToMany(Group::class, 'pengerjaan')
+                    ->withPivot('instrumen_id', 'points')
+                    ->withTimestamps();
+    }
 }
