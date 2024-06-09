@@ -36,22 +36,22 @@
                     <ul class="navbar-nav header-right">
                         <li class="nav-item">
                             {{-- Button Gabung Group --}}
-                            <button class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#join-group">Gabung Grup</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#join-group">Gabung
+                                Grup</button>
                             {{-- Button Gabung Group --}}
                         </li>
 
                         <li class="nav-item dropdown header-profile">
                             <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
-                                <img src="{{ asset('assets/images/profile/pic1.jpg') }}" width="20"
-                                    alt="" />
+                                <img src="{{ $user->avatar ? asset('storage/' . $user->avatar) : asset('assets/images/avatar/default-avatar.jpg') }}"
+                                    width="20" alt="" style="object-fit: cover"/>
                                 <div class="header-info">
-                                    <span>{{ Str::limit(Auth::user()->name, 15) }}</span>
-                                    <small>{{ Auth::user()->role }}</small>
+                                    <span>{{ Str::limit($user->name, 15) }}</span>
+                                    <small>{{ $user->role }}</small>
                                 </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                {{-- <a href="app-profile.html" class="dropdown-item ai-icon">
+                                <a wire:navigate href="{{ route('profile.index') }}" class="dropdown-item ai-icon">
                                     <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary"
                                         width="18" height="18" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -61,7 +61,7 @@
                                     </svg>
                                     <span class="ms-2">Profile </span>
                                 </a> --}}
-                               
+
                                 <div onclick="handleLogout('formLogout')" class="dropdown-item ai-icon" style="cursor: pointer">
                                     <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger"
                                         width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -74,8 +74,7 @@
                                     </svg>
                                     <span  class="ms-2">Logout </span>
                                 </div>
-                                <form class="d-none" id="formLogout" action="{{ route('auth.logout') }}"
-                                    method="post">
+                                <form class="d-none" id="formLogout" action="{{ route('auth.logout') }}" method="post">
                                     @csrf
                                 </form>
                             </div>
