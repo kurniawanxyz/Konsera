@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Instrumen;
 use Illuminate\Http\Request;
 
 class UserInstrumentController extends Controller
 {
+
+    public function __construct(private Instrumen $instruments)
+    {
+        $this->instruments = $instruments;
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -35,7 +42,16 @@ class UserInstrumentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $id = decrypt($id);
+        $instrument = $this->instruments->with(
+            'criteria',
+            'sub_criterias',
+            'statements',
+            'answer',
+        )
+            ->findOrFail($id);
+
+        return view('user.instrument.show', compact('instrument'));
     }
 
     /**
