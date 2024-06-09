@@ -49,9 +49,8 @@ class UserGroupController extends Controller
         $user = User::find(Auth::id());
 
         if ($user->isMember($id) == true) {
-            $group = $this->groups->findOrFail($id)
-                ->with('user', 'instrumens')
-                ->first();
+            $group = $this->groups->with('user', 'instrumens')
+                ->findOrFail($id);
 
             return view('user.groups.show', compact('group'));
         } else {

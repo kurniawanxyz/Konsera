@@ -25,7 +25,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="tab" href="#profile1">
-							<i class="flaticon-381-book"></i>
+                            <i class="flaticon-381-book"></i>
                             Instrumen</a>
                     </li>
                 </ul>
@@ -62,13 +62,17 @@
                                         <div class="d-sm-block d-lg-flex d-md-flex align-items-center">
                                             <div class="col-xl-9 col-md-9 col-sm-12">
                                                 <h5>
-                                                    {{ $item->title }} | <span>{{ $item->description }}</span>
+                                                    {{ $item->title }}
                                                 </h5>
                                             </div>
                                             <div class="col-xl-3 col-md-3 col-sm-12">
                                                 <div class="d-flex gap-2">
-                                                    <a wire:navigate href="{{route('pengerjaan.index',["group_id"=>$group->id,"instrumen_id"=>$item->id])}}" class="btn btn-primary">Kerjakan</a>
-                                                    <button class="btn btn-warning">Detail</button>
+                                                    <a wire:navigate
+                                                        href="{{ route('pengerjaan.index', ['group_id' => $group->id, 'instrumen_id' => $item->id]) }}"
+                                                        class="btn btn-primary">Kerjakan</a>
+                                                    <a wire:navigate
+                                                        href="{{ route('user-instruments.show', ['user_instrument' => encrypt($item->id)]) }}"
+                                                        class="btn btn-warning">Detail</a>
                                                 </div>
                                             </div>
                                         </div>
