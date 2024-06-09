@@ -38,9 +38,15 @@
                                 </div>
                                 <div class="card-body">
                                     @forelse ($members as $item)
-                                        <h5>
-                                            {{ $item->name }}
-                                        </h5>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img src="{{ $item->avatar ? asset('storage/' . $item->avatar) : asset('assets/images/avatar/default-avatar.jpg') }}"
+                                                alt="user-avatar"
+                                                style="width: 50px; height: 50px; object-fit: cover ;object-fit: cover"
+                                                class="rounded-2">
+                                            <h5>
+                                                {{ $item->name }}
+                                            </h5>
+                                        </div>
                                         <hr>
                                     @empty
                                         <h5>

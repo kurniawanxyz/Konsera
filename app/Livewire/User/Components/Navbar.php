@@ -4,6 +4,8 @@ namespace App\Livewire\User\Components;
 
 use App\Models\Group;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class Navbar extends Component
@@ -60,8 +62,11 @@ class Navbar extends Component
         }
     }
 
+    #[On('profile-updated')]
     public function render()
     {
-        return view('livewire.user.components.navbar');
+        return view('livewire.user.components.navbar', [
+            'user' => Auth::user()
+        ]);
     }
 }
