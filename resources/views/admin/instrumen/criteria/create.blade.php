@@ -39,6 +39,13 @@
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
+        <div class="d-flex flex-column mt-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" id="description" class="form-control">{{ old('description')}}</textarea>
+        </div>
+        @error('description')
+        <div class="text-danger">{{ $message }}</div>
+    @enderror
 
         <div class="d-flex justify-content-end mt-5">
             <button class="btn btn-primary">Submit</button>

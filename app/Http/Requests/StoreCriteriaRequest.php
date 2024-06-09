@@ -24,7 +24,8 @@ class StoreCriteriaRequest extends FormRequest
         return [
             "text" => "required|string|max:255",
             "point_max" => "required|min:0",
-            "point_min" => "required|min:0"
+            "point_min" => "required|min:0",
+            "description" => "required|string|max:1000",
         ];
     }
 

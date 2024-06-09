@@ -23,7 +23,6 @@
             <th>Nama</th>
             <th>Max</th>
             <th>Min</th>
-            <th>Jumlah Peserta</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -34,7 +33,6 @@
             <td>{{ $item->text }}</td>
             <td>{{$item->point_max}}</td>
             <td>{{$item->point_min}}</td>
-            <td>0</td>
             <td>
                 <a href="{{ route('criteria.edit', $item->id) }}" class="btn btn-warning">Edit</a>
                 <button type="button" onclick="handleConfirmDelete('formDeleteCriteria')" class="btn btn-danger">Delete</button>

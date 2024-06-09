@@ -24,7 +24,8 @@ class UpdateCriteriaRequest extends FormRequest
         return [
             "text" => "string|max:255",
             "point_max" => "string|min:0",
-            "point_min" => "string|min:0"
+            "point_min" => "string|min:0",
+            "description" => "string|max:1000"
         ];
     }
 }
