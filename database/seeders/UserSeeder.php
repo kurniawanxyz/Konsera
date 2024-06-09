@@ -26,5 +26,7 @@ class UserSeeder extends Seeder
             "password" => bcrypt("password"),
             "role" => "user"
         ]);
+
+        $this->call(InstrumenKonsera::class);
     }
 }

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->foreignId("instrumen_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId("group_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId("user_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId("criteria_id")->constrained()->restrictOnDelete()->cascadeOnDelete();
             $table->double("points")->default(0.0);
             $table->timestamps();
         });

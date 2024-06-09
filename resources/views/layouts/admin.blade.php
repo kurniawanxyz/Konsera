@@ -228,7 +228,8 @@
         <div class="deznav">
             <div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
-                    <li><a href="{{route('admin.dashboard')}}" class="ai-icon" aria-expanded="false">
+                    <li>
+                        <a href="{{route('admin.dashboard')}}" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-home-2"></i>
 							<span class="nav-text">Dashboard</span>
 						</a>

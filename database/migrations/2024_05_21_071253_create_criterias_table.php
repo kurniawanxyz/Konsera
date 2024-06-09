@@ -17,6 +17,7 @@ return new class extends Migration
             $table->double("point_max");
             $table->double("point_min");
             $table->text("text");
+            $table->text("description");
             $table->timestamps();
         });
     }

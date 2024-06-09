@@ -32,6 +32,7 @@
             resize: none;
         }
     </style>
+    @livewireStyles
 </head>
 
 <body>
@@ -341,6 +342,28 @@
     <script src="{{ asset('assets/vendor/sweetalert2/dist/sweetalert2.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins-init/sweetalert.init.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    @livewireScripts
+    
+    <script>
+        document.addEventListener('livewire:load', function () {
+        Livewire.on('confirm-finish', () => {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, do it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Emit event untuk menangani konfirmasi di Livewire
+                    Livewire.dispatch('syncPengerjaan');
+                }
+            });
+        });
+    });
+    </script>
     <script>
         function handleLogout(formId) {
             Swal.fire({

@@ -54,6 +54,8 @@ class PengerjaanController extends Controller
 
     public function rekap()
     {
+        $rekap = auth()->user()->pengerjaanByInstrumen;
+        // dd($rekap);
         return view("user.rekap.index");
     }
 

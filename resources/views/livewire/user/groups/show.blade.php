@@ -67,7 +67,7 @@
                                             </div>
                                             <div class="col-xl-3 col-md-3 col-sm-12">
                                                 <div class="d-flex gap-2">
-                                                    <button class="btn btn-primary">Kerjakan</button>
+                                                    <a wire:navigate href="{{route('pengerjaan.index',["group_id"=>$group->id,"instrumen_id"=>$item->id])}}" class="btn btn-primary">Kerjakan</a>
                                                     <button class="btn btn-warning">Detail</button>
                                                 </div>
                                             </div>

@@ -3,8 +3,8 @@
 @section('title', 'Pengerjaan')
 
 @section('list-menu')
-
-    @forelse ($instrumens->sub_criterias as $i => $item)
+    <livewire:pengerjaan.sidebar :instrumens="$instrumens"/>
+    {{-- @forelse ($instrumens->sub_criterias as $i => $item)
     <li class="">
         <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
             <i class="flaticon-381-internet"></i>
@@ -21,11 +21,11 @@
     </li>
     @empty
 
-    @endforelse
+    @endforelse --}}
 @endsection
 
 @section('content')
-    <form action="{{route('pengerjaan.store',["group_id"=>$group_id,"instrumen_id"=>$instrumens->id])}}" method="post">
+    {{-- <form action="{{route('pengerjaan.store',["group_id"=>$group_id,"instrumen_id"=>$instrumens->id])}}" method="post">
         @csrf
         @php
             $index = 0;
@@ -65,5 +65,8 @@
                 </div>
             </div>
         </div>
-    </form>
+    </form> --}}
+   <livewire:pengerjaan.index :instrumens="$instrumens" :group_id="$group_id"/>
 @endsection
+
+

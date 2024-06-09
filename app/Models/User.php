@@ -52,7 +52,7 @@ class User extends Authenticatable
 
     public function pengerjaanByInstrumen(): BelongsToMany
     {
-        return $this->belongsToMany(Instrumen::class, 'pengerjaan')->withPivot(["group_id","points"]);
+        return $this->belongsToMany(Instrumen::class, 'pengerjaan')->withPivot(["group_id","points","criteria_id"]);
     }
 
     public function pengerjaanByGroup(): BelongsToMany
