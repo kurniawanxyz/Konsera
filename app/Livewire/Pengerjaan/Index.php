@@ -72,8 +72,11 @@ class Index extends Component
                     }
                 }
 
-                $persentase = $pointPerSubKriteria/(count($data->statements)*$pointMax->point_fav);
-                $persentase *= 100;
+                $persentase = 0.0;
+                if($pointPerSubKriteria != 0){
+                    $persentase = $pointPerSubKriteria/(count($data->statements)*$pointMax->point_fav);
+                    $persentase *= 100;
+                }
 
                 $status="";
                 if($persentase >= 75.0){
