@@ -52,6 +52,7 @@ Route::prefix('user')->middleware('auth')->group(function () {
         Route::post("pengerjaan/{group_id}/{instrumen_id}","store")->name("pengerjaan.store");
         
         Route::get("rekap-pengerjaan/","rekap")->name("rekap.index");
+        Route::get("rekap-pengerjaan/detail/{instrumen_id}","show")->name("rekap.show");
         // Route::post("answer/store/{instrumen_id}","store")->name("answer.store");
         // Route::get("answer/{answer}/show","show")->name("answer.show");
         // Route::get("answer/{answer}/edit","edit")->name("answer.edit");

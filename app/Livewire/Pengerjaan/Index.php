@@ -3,13 +3,10 @@
 namespace App\Livewire\Pengerjaan;
 
 use App\Models\Answer;
-use App\Models\Criteria;
 use App\Models\Statement;
 use Exception;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Reactive;
-use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class Index extends Component
@@ -41,9 +38,11 @@ class Index extends Component
     public function syncPengerjaan()
     {
         try{
+            $this->calculationPoint();
             $user = auth()->user();
             $instrumen_id = $this->instrumens->id;
             $point = 0;
+            
 
             foreach ($this->hasiPekerjaan as $key => $value) {
                 $stm = Statement::findOrFail($key)->favorable;
@@ -60,7 +59,41 @@ class Index extends Component
             ->where('point_min', '<=', $point)
             ->where('point_max', '>=', $point)
             ->first();
+            $subCriterias = $this->instrumens->sub_criterias;
+            $pointMax = Answer::orderBy("point_fav","desc")->where("instrumen_id",$this->instrumens->id)->first();
+            foreach($subCriterias as $data){
+                $pointPerSubKriteria = 0;
+                foreach($data->statements as $stm){
+                    $jwb = Answer::findOrFail($this->hasiPekerjaan[$stm->id]);
+                    if($stm->favorable == "fav"){
+                        $pointPerSubKriteria = $pointPerSubKriteria+$jwb->point_fav;
+                    }else{
+                        $pointPerSubKriteria = $pointPerSubKriteria+$jwb->point_unfav;
+                    }
+                }
 
+                $persentase = $pointPerSubKriteria/(count($data->statements)*$pointMax->point_fav);
+                $persentase *= 100;
+
+                $status="";
+                if($persentase >= 75.0){
+                    $status = "tinggi";
+                }else if($persentase >= 40.0){
+                    $status = "sedang";
+                }else{
+                    $status = "rendah";
+                }
+                $tes= $user->nilaiTiapSubKriteria()->syncWithoutDetaching([
+                    $data->id => [
+                        "group_id"=> $this->group_id,
+                        "instrumen_id" => $instrumen_id,
+                        "point" => $pointPerSubKriteria,
+                        "pointMax" => (count($data->statements)*$pointMax->point_fav),
+                        "status" => $status,
+                    ]
+                    ]
+                );
+            }
 
             $user->pengerjaanByInstrumen()->syncWithoutDetaching([
                 $instrumen_id => [
@@ -69,9 +102,15 @@ class Index extends Component
                     'criteria_id' => $criteria->id
                 ]
             ]);
+
+
+
             session()->flash("success","Berhasil mengumpulkan jawaban");
             return $this->redirectRoute("user.dashboard");
         }catch(Exception $e){
+            Log::debug('Sync data:', [
+                "message" => $e->getMessage(),
+            ]);
             session()->flash("error",$e->getMessage());
         }
         // Dapatkan user yang sedang terautentikasi

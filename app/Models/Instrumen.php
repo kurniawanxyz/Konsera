@@ -44,4 +44,11 @@ class Instrumen extends Model
         return $this->belongsToMany(User::class,'pengerjaan')->withPivot(["points"]);
     }
 
+    public function usersByKriteria(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'PengerjaanByKriteria', 'instrumen_id', 'user_id')
+                    ->withPivot('sub_kriteria_id', 'group_id', 'point', 'pointMax', 'status')
+                    ->withTimestamps();
+    }
+
 }

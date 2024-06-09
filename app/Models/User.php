@@ -71,4 +71,18 @@ class User extends Authenticatable
     {
         return $this->groups()->where('group_id', $group_id)->exists();
     }
+
+    public function nilaiTiapSubKriteriaInstrumen(): BelongsToMany
+    {
+        return $this->belongsToMany(Instrumen::class, 'PengerjaanByKriteria', 'user_id', 'instrumen_id')
+                    ->withPivot('sub_kriteria_id', 'group_id', 'point', 'pointMax','status')
+                    ->withTimestamps();
+    }
+
+    public function nilaiTiapSubKriteria(): BelongsToMany
+    {
+        return $this->belongsToMany(SubKriteria::class, 'PengerjaanByKriteria', 'user_id', 'sub_kriteria_id')
+                    ->withPivot('instrumen_id', 'group_id', 'point', 'pointMax', 'status')
+                    ->withTimestamps();
+    }
 }

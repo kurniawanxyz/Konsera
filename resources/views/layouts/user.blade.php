@@ -183,6 +183,8 @@
     <script src="{{ asset('assets/js/deznav-init.js') }}"></script>
     <script src="{{ asset('assets/vendor/sweetalert2/dist/sweetalert2.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins-init/sweetalert.init.js') }}"></script>
+    <script src="{{ asset('vendor/chart.js/Chart.bundle.min.js')}}"></script>
+    <script src="{{ asset('js/plugins-init/chartjs-init.js')}}  "></script>
 
     @livewireScripts
 
@@ -191,6 +193,8 @@
         $.fn.modal.Constructor.prototype.show = () => $('.modal-backdrop').not(":first").remove()
     </script>
     {{-- Fix Modal Backdrop Issues --}}
+
+    @yield("script")
 
     <script>
         function handleLogout(formId) {
