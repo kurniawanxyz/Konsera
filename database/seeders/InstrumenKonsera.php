@@ -26,14 +26,14 @@ class InstrumenKonsera extends Seeder
             [
                 "description" => fake()->sentence(),
                 "text" => "PRIBADI SEHAT",
-                "point_min" => 21,
-                "point_max" => 40,
+                "point_min" => 11,
+                "point_max" => 20,
             ],
             [
                 "description" => fake()->sentence(),
                 "text" => "PRIBADI TIDAK SEHAT",
                 "point_min" => 0,
-                "point_max" => 20,
+                "point_max" => 10,
             ],
             [
                 "description" => fake()->sentence(),

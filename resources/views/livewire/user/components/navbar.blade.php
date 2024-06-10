@@ -60,7 +60,7 @@
                                         <circle cx="12" cy="7" r="4"></circle>
                                     </svg>
                                     <span class="ms-2">Profile </span>
-                                </a> --}}
+                                </a> 
 
                                 <div onclick="handleLogout('formLogout')" class="dropdown-item ai-icon" style="cursor: pointer">
                                     <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger"
