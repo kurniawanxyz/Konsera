@@ -32,6 +32,8 @@
             resize: none;
         }
     </style>
+
+    @livewireStyles
 </head>
 
 <body>
@@ -249,6 +251,11 @@
                             <span class="nav-text">Instrumen</span>
                         </a>
                     </li>
+                    <li><a href="{{ route('books.index') }}" class="ai-icon" aria-expanded="false">
+                            <i class="flaticon-381-book"></i>
+                            <span class="nav-text">Buku</span>
+                        </a>
+                    </li>
                 </ul>
                 {{--
 				<div class="book-box">
@@ -326,6 +333,7 @@
         <script src="{{ asset('assets/vendor/sweetalert2/dist/sweetalert2.min.js') }}"></script>
         <script src="{{ asset('assets/js/plugins-init/sweetalert.init.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        @livewireScripts
         <script>
             function handleLogout(formId) {
                 Swal.fire({
