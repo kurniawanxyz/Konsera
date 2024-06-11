@@ -12,7 +12,7 @@ class LandingPageController extends Controller
 {
     public function index()
     {
-        $users = User::query()->count();
+        $users = User::all()->count();
         $instruments = Instrumen::query()->count();
         $criterias = Criteria::query()->count();
         $groups = Group::query()->count();
