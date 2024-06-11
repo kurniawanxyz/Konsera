@@ -61,7 +61,7 @@
         <div class="nav-header">
             <a href="{{ route('user.dashboard') }}" class="brand-logo">
                 <img src="{{ asset('assets/images/new-logo.png') }}" alt="logo" class="logo-abbr" style="width: 50px">
-                <h1 class="fw-bold text-black m-0 brand-title">KORSERA</h1>
+                <h1 class="fw-bold text-black m-0 brand-title">KONSERA</h1>
             </a>
 
             <div class="nav-control">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BooksController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\CriteriaController;
 use App\Http\Controllers\GroupController;
@@ -61,6 +62,7 @@ Route::prefix("admin")->middleware('auth')->group(function () {
     Route::get("dashboard", fn () => view("admin.dashboard"))->name("admin.dashboard");
     Route::resource("groups", GroupController::class);
     Route::resource("instruments", InstrumenController::class);
+    Route::resource('books', BooksController::class);
     Route::controller(CriteriaController::class)->group(function () {
         Route::get("criteria/{instrumen_id}", "index")->name("criteria.index");
         Route::get("criteria/create/{instrumen_id}", "create")->name("criteria.create");
