@@ -24,7 +24,7 @@ jobs:
         # ftp server
         server: konsera.kaitodecode.com
         # ftp username
-        username: admin@konsera.kaitodecode.com
+        username: adi@konsera.kaitodecode.com
         # ftp password
         password: TVEjE1Xeg5uY
         # Server port to connect to (read your web hosts docs)

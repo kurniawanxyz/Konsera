@@ -16,7 +16,7 @@
     <meta property="og:description" content="Kripton : Crypto Admin Dashboard  Bootstrap 5 Template" />
     <meta property="og:image" content="social-image.png" />
     <meta name="format-detection" content="telephone=no">
-    <title>kripton - Crypto Admin Dashboard </title>
+    <title>KONSERA | REGISTER</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <link href="{{ asset('assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
@@ -34,7 +34,7 @@
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <div class="text-center mb-3">
-                                        <h1 class="fw-bold">KORSERA</h1>
+                                        <h1 class="fw-bold">KONSERA</h1>
                                     </div>
                                     <h4 class="text-center mb-4">Daftarkan akun anda</h4>
                                     <form action="{{ route('auth.register') }}" method="post">

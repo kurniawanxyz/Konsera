@@ -28,6 +28,7 @@
     </thead>
     <tbody>
         @forelse ($criteria as $i => $item)
+        {{-- @dump($item) --}}
         <tr>
             <td>{{ $i + 1 }}</td>
             <td>{{ $item->text }}</td>
@@ -35,8 +36,8 @@
             <td>{{$item->point_min}}</td>
             <td>
                 <a href="{{ route('criteria.edit', $item->id) }}" class="btn btn-warning">Edit</a>
-                <button type="button" onclick="handleConfirmDelete('formDeleteCriteria')" class="btn btn-danger">Delete</button>
-                <form id="formDeleteCriteria" action="{{ route('criteria.destroy', $item->id) }}" method="POST" class="d-none" style="display:inline;">
+                <button type="button" onclick="handleConfirmDelete('formDeleteCriteria-{{$item->id}}')" class="btn btn-danger">Delete</button>
+                <form id="formDeleteCriteria-{{$item->id}}" action="{{ route('criteria.destroy', $item->id) }}" method="POST" class="d-none" style="display:inline;">
                     @csrf
                     @method('DELETE')
                 </form>

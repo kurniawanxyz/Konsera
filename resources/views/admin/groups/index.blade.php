@@ -30,8 +30,8 @@
             <tr>
                 <td>{{$i+1}}</td>
                 <td>{{$item->name}}</td>
-                <td>0</td>
-                <td>0</td>
+                <td>{{$item->user->count()}}</td>
+                <td>{{$item->instrumens->count()}}</td>
                 <td>
                     <div class="dropdown">
                         <button type="button" class="btn  light sharp" data-bs-toggle="dropdown" aria-expanded="false">

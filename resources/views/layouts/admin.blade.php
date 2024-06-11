@@ -16,7 +16,7 @@
     <meta property="og:image" content="social-image.png" />
     <meta name="format-detection" content="telephone=no">
     <title>
-        @yield('title')
+        KONSERA | @yield('title')
     </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
@@ -62,7 +62,7 @@
             <a href="{{ route('user.dashboard') }}" class="brand-logo">
                 <img src="{{ asset('assets/images/new-logo.png') }}" alt="logo" class="logo-abbr"
                     style="width: 50px">
-                <h1 class="fw-bold text-black m-0 brand-title">KORSERA</h1>
+                <h1 class="fw-bold text-black m-0 brand-title">KONSERA</h1>
             </a>
 
             <div class="nav-control">
@@ -343,7 +343,7 @@
                 });
             }
 
-            function handleConfirmDelete(formId) {
+            function handleConfirmDelete(url) {
                 Swal.fire({
                     title: 'Apakah Anda yakin?',
                     text: "Anda tidak akan dapat mengembalikan tindakan ini!",
@@ -354,24 +354,7 @@
                     confirmButtonText: 'Ya, hapus!'
                 }).then((result) => {
                     if (result.value) {
-                        $(`#${formId}`).submit();
-                    }
-                });
-            }
-
-
-            function handleConfirmDelete(formId) {
-                Swal.fire({
-                    title: 'Apakah Anda yakin?',
-                    text: "Anda tidak akan dapat mengembalikan tindakan ini!",
-                    type: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Ya, hapus!'
-                }).then((result) => {
-                    if (result.value) {
-                        $(`#${formId}`).submit();
+                        $(`#${url}`).submit();
                     }
                 });
             }
