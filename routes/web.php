@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\CriteriaController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\InstrumenController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\PengerjaanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StatementController;
@@ -31,6 +32,7 @@ Route::middleware('guest')->group(function () {
     Route::post("/login", [AuthController::class, "login"])->name("auth.login");
     Route::get("/register", fn () => view("auth.register"))->name("auth.page.register");
     Route::post("/register", [AuthController::class, "register"])->name("auth.register");
+    Route::get('/', [LandingPageController::class, 'index'])->name('landing-page');
 });
 
 // Route untuk usesr yang sudah terautentifikasi
@@ -45,16 +47,11 @@ Route::prefix('user')->middleware('auth')->group(function () {
     Route::resource("user-groups", UserGroupController::class);
     Route::resource("user-instruments", UserInstrumentController::class);
 
-    Route::controller(PengerjaanController::class)->group(function(){
-        Route::get("pengerjaan/{group_id}/{instrumen_id}","index")->name("pengerjaan.index");
-        Route::post("pengerjaan/{group_id}/{instrumen_id}","store")->name("pengerjaan.store");
+    Route::controller(PengerjaanController::class)->group(function () {
+        Route::get("pengerjaan/{group_id}/{instrumen_id}", "index")->name("pengerjaan.index");
+        Route::post("pengerjaan/{group_id}/{instrumen_id}", "store")->name("pengerjaan.store");
 
-        Route::get("rekap-pengerjaan/","rekap")->name("rekap.index");
-        // Route::post("answer/store/{instrumen_id}","store")->name("answer.store");
-        // Route::get("answer/{answer}/show","show")->name("answer.show");
-        // Route::get("answer/{answer}/edit","edit")->name("answer.edit");
-        // Route::put("answer/{answer}/update","update")->name("answer.update");
-        // Route::delete("answer/{answer}/destroy","destroy")->name("answer.destroy");
+        Route::get("rekap-pengerjaan/", "rekap")->name("rekap.index");
     });
 });
 

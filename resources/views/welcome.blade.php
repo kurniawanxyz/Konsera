@@ -1,133 +1,1238 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html class="no-js" lang="en">
 
-        <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+<!-- Mirrored from theme-land.com/sapp/demo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jun 2024 01:22:54 GMT -->
 
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, sans-serif;font-feature-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::-webkit-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mx-6{margin-left:1.5rem;margin-right:1.5rem}.ml-4{margin-left:1rem}.mt-16{margin-top:4rem}.mt-6{margin-top:1.5rem}.mt-4{margin-top:1rem}.-mt-px{margin-top:-1px}.mr-1{margin-right:0.25rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-16{height:4rem}.h-7{height:1.75rem}.h-6{height:1.5rem}.h-5{height:1.25rem}.min-h-screen{min-height:100vh}.w-auto{width:auto}.w-16{width:4rem}.w-7{width:1.75rem}.w-6{width:1.5rem}.w-5{width:1.25rem}.max-w-7xl{max-width:80rem}.shrink-0{flex-shrink:0}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.gap-4{gap:1rem}.self-center{align-self:center}.rounded-lg{border-radius:0.5rem}.rounded-full{border-radius:9999px}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity))}.bg-dots-darker{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E")}.from-gray-700\/50{--tw-gradient-from:rgb(55 65 81 / 0.5);--tw-gradient-to:rgb(55 65 81 / 0);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0);--tw-gradient-stops:var(--tw-gradient-from), transparent, var(--tw-gradient-to)}.bg-center{background-position:center}.stroke-red-500{stroke:#ef4444}.stroke-gray-400{stroke:#9ca3af}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-gray-500\/20{--tw-shadow-color:rgb(107 114 128 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-red-500 *::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-red-500::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}.focus\:rounded-sm:focus{border-radius:0.125rem}.focus\:outline:focus{outline-style:solid}.focus\:outline-2:focus{outline-width:2px}.focus\:outline-red-500:focus{outline-color:#ef4444}.group:hover .group-hover\:stroke-gray-600{stroke:#4b5563}.z-10{z-index: 10}@media (prefers-reduced-motion: no-preference){.motion-safe\:hover\:scale-\[1\.01\]:hover{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}@media (prefers-color-scheme: dark){.dark\:bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:bg-gray-800\/50{background-color:rgb(31 41 55 / 0.5)}.dark\:bg-red-800\/20{background-color:rgb(153 27 27 / 0.2)}.dark\:bg-dots-lighter{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E")}.dark\:bg-gradient-to-bl{background-image:linear-gradient(to bottom left, var(--tw-gradient-stops))}.dark\:stroke-gray-600{stroke:#4b5563}.dark\:text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:shadow-none{--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.dark\:ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.dark\:ring-inset{--tw-ring-inset:inset}.dark\:ring-white\/5{--tw-ring-color:rgb(255 255 255 / 0.05)}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.group:hover .dark\:group-hover\:stroke-gray-400{stroke:#9ca3af}}@media (min-width: 640px){.sm\:fixed{position:fixed}.sm\:top-0{top:0px}.sm\:right-0{right:0px}.sm\:ml-0{margin-left:0px}.sm\:flex{display:flex}.sm\:items-center{align-items:center}.sm\:justify-center{justify-content:center}.sm\:justify-between{justify-content:space-between}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:gap-8{gap:2rem}.lg\:p-8{padding:2rem}}
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
+    <!-- Title  -->
+    <title>Korsera | Landing Page</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
+    <!-- ***** All CSS Files ***** -->
+
+    <!-- Style css -->
+    <link rel="stylesheet" href="{{ asset('assets/landing-page/css/style.css') }}">
+
+</head>
+
+<body>
+    <!--====== Scroll To Top Area Start ======-->
+    <div id="scrollUp" title="Scroll To Top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <!--====== Scroll To Top Area End ======-->
+
+    <div class="main">
+        <!-- ***** Header Start ***** -->
+        <header class="navbar navbar-sticky navbar-expand-lg navbar-dark">
+            <div class="container position-relative">
+                <a class="navbar-brand" href="index.html">
+                    <img class="navbar-brand-regular" src="{{ asset('assets/images/new-logo.png') }}" alt="brand-logo"
+                        style="width: 50px">
+                    <img class="navbar-brand-sticky" src="{{ asset('assets/images/new-logo.png') }}" style="width: 50px"
+                        alt="sticky brand-logo">
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="navbarToggler"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-inner">
+                    <!--  Mobile Menu Toggler -->
+                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="navbarToggler"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <nav>
+                        <ul class="navbar-nav" id="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#features">Layanan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#quiz">Quiz</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#grup">Grup</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#tutor">Cara kerja</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#tim">Tim</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('auth.login') }}">Masuk</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-            @endif
+            </div>
+        </header>
+        <!-- ***** Header End ***** -->
 
-            <div class="max-w-7xl mx-auto p-6 lg:p-8">
-                <div class="flex justify-center">
-                    <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
-                        <path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="#FF2D20"/>
-                    </svg>
+        <!-- ***** Welcome Area Start ***** -->
+        <section id="home" class="section welcome-area bg-overlay overflow-hidden d-flex align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Welcome Intro Start -->
+                    <div class="col-12 col-md-7 col-lg-6">
+                        <div class="welcome-intro">
+                            <h1 class="text-white">Bangun Masa Depanmu dengan Korsera</h1>
+                            <p class="text-white my-4">Korsera adalah aplikasi inovatif yang dirancang khusus untuk
+                                membantu Anda dalam penilaian dan pengembangan diri. Dapatkan wawasan mendalam tentang
+                                kekuatan dan kelemahan Anda, serta strategi yang dipersonalisasi untuk mencapai potensi
+                                penuh Anda. Mari mulai perjalanan menuju versi terbaik dari diri Anda dengan Korsera.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-5 col-lg-6">
+                        <!-- Welcome Thumb -->
+                        <div class="welcome-thumb mx-auto" data-aos="fade-left" data-aos-delay="500"
+                            data-aos-duration="1000">
+                            <img src="{{ asset('assets/images/mockup/Mockup-Dashboard.png') }}" alt="">
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <!-- Shape Bottom -->
+            <div class="shape-bottom">
+                <svg viewBox="0 0 1920 310" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" class="svg replaced-svg">
+                    <title>sApp Shape</title>
+                    <desc>Created with Sketch</desc>
+                    <defs></defs>
+                    <g id="sApp-Landing-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="sApp-v1.0" transform="translate(0.000000, -554.000000)" fill="#FFFFFF">
+                            <path
+                                d="M-3,551 C186.257589,757.321118 319.044414,856.322454 395.360475,848.004007 C509.834566,835.526337 561.525143,796.329212 637.731734,765.961549 C713.938325,735.593886 816.980646,681.910577 1035.72208,733.065469 C1254.46351,784.220361 1511.54925,678.92359 1539.40808,662.398665 C1567.2669,645.87374 1660.9143,591.478574 1773.19378,597.641868 C1848.04677,601.75073 1901.75645,588.357675 1934.32284,557.462704 L1934.32284,863.183395 L-3,863.183395"
+                                id="sApp-v1.0"></path>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </section>
+        <!-- ***** Welcome Area End ***** -->
 
-                <div class="mt-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Documentation</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                </p>
+        <!-- ***** Counter Area Start ***** -->
+        <section class="section counter-area ptb_50">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-5 col-sm-3 single-counter text-center">
+                        <div class="counter-inner p-3 p-md-0">
+                            <!-- Counter Item -->
+                            <div class="counter-item d-inline-block mb-3">
+                                <span class="counter fw-7">{{ $users }}</span>
                             </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laracasts.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laracasts</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </p>
+                            <h5>Users</h5>
+                        </div>
+                    </div>
+                    <div class="col-5 col-sm-3 single-counter text-center">
+                        <div class="counter-inner p-3 p-md-0">
+                            <!-- Counter Item -->
+                            <div class="counter-item d-inline-block mb-3">
+                                <span class="counter fw-7">{{ $instruments }}</span>
                             </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laravel-news.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel News</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </p>
+                            <h5>Instrumen</h5>
+                        </div>
+                    </div>
+                    <div class="col-5 col-sm-3 single-counter text-center">
+                        <div class="counter-inner p-3 p-md-0">
+                            <!-- Counter Item -->
+                            <div class="counter-item d-inline-block mb-3">
+                                <span class="counter fw-7">{{ $criterias }}</span>
                             </div>
+                            <h5>Kriteria</h5>
+                        </div>
+                    </div>
+                    <div class="col-5 col-sm-3 single-counter text-center">
+                        <div class="counter-inner p-3 p-md-0">
+                            <!-- Counter Item -->
+                            <div class="counter-item d-inline-block mb-3">
+                                <span class="counter fw-7">{{ $groups }}</span>
+                            </div>
+                            <h5>Grup</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Counter Area End ***** -->
 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Forge</a>, <a href="https://vapor.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Vapor</a>, <a href="https://nova.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Nova</a>, and <a href="https://envoyer.io" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Telescope</a>, and more.
-                                </p>
+        <!-- ***** Features Area Start ***** -->
+        <section id="features" class="section features-area style-two overflow-hidden ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <!-- Section Heading -->
+                        <div class="section-heading text-center">
+                            <span class="d-inline-block rounded-pill shadow-sm fw-5 px-4 py-2 mb-3">
+                                <i class="far fa-lightbulb text-primary mr-1"></i>
+                                <span class="text-primary">Fitur</span>
+                                Premium
+                            </span>
+                            <h2>Apa saja layanan yang ditawarkan?</h2>
+                            <p class="d-none d-sm-block mt-4">Anda bisa bergabung dengan grup dan mengerjakan quiz,
+                                kemudian anda dapat mengenali diri anda lebih dalam dengan melihat rekap pengerjaan.
+                            </p>
+                            <p class="d-block d-sm-none mt-4">Anda bisa bergabung dengan grup dan mengerjakan quiz,
+                                kemudian anda dapat mengenali diri anda lebih dalam dengan melihat rekap pengerjaan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 res-margin">
+                        <!-- Image Box -->
+                        <div class="image-box text-center icon-1 p-5 wow fadeInLeft" data-wow-delay="0.4s">
+                            <!-- Featured Image -->
+                            <div class="featured-img mb-3">
+                                <img class="avatar-sm"
+                                    src="{{ asset('assets/landing-page/img/icon/featured-img/layers.png') }}"
+                                    alt="">
+                            </div>
+                            <!-- Icon Text -->
+                            <div class="icon-text">
+                                <h3 class="mb-2">Performa Cepat</h3>
+                                <p>Web ini merupakan SPA (Single Page Application) yang memungkinkan Anda berpindah
+                                    halaman tanpa reload, sehingga meningkatkan kecepatan dan efisiensi penggunaan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 res-margin">
+                        <!-- Image Box -->
+                        <div class="image-box text-center icon-1 p-5 wow fadeInUp" data-wow-delay="0.2s">
+                            <!-- Featured Image -->
+                            <div class="featured-img mb-3">
+                                <img class="avatar-sm"
+                                    src="{{ asset('assets/landing-page/img/icon/featured-img/speak.png') }}"
+                                    alt="">
+                            </div>
+                            <!-- Icon Text -->
+                            <div class="icon-text">
+                                <h3 class="mb-2">Fitur Assesment</h3>
+                                <p>Web ini memiliki fitur "Assesment" di mana Anda dapat bergabung dengan grup,
+                                    mengerjakan kuis, dan melihat rekap hasil pengerjaannya secara langsung.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <!-- Image Box -->
+                        <div class="image-box text-center icon-1 p-5 wow fadeInRight" data-wow-delay="0.4s">
+                            <!-- Featured Image -->
+                            <div class="featured-img mb-3">
+                                <img class="avatar-sm"
+                                    src="{{ asset('assets/landing-page/img/icon/featured-img/lock.png') }}"
+                                    alt="">
+                            </div>
+                            <!-- Icon Text -->
+                            <div class="icon-text">
+                                <h3 class="mb-2">UI/UX User Friendly</h3>
+                                <p>Tampilan yang rapi dan bersih membuat pengguna nyaman dalam mengerjakan kuis yang
+                                    tersedia di aplikasi Korsera ini, sehingga meningkatkan pengalaman pengguna dalam
+                                    menggunakan web ini.</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <!-- ***** Features Area End ***** -->
 
-                <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm sm:text-left">
-                        &nbsp;
+        <!-- ***** Service Area Start ***** -->
+        <section id="quiz" class="section service-area bg-gray overflow-hidden ptb_100">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-12 col-lg-6 order-2 order-lg-1">
+                        <!-- Service Text -->
+                        <div class="service-text pt-4 pt-lg-0">
+                            <h2 class="text-capitalize mb-4">Kenali Dirimu dengan Mengerjakan Quiz</h2>
+                            <!-- Service List -->
+                            <ul class="service-list">
+                                <!-- Single Service -->
+                                <li class="single-service media py-2">
+                                    <div class="service-icon pr-4">
+                                        <span><i class="fab fa-buffer"></i></span>
+                                    </div>
+                                    <div class="service-text media-body">
+                                        <p>Dapatkan pemahaman yang mendalam tentang dirimu dengan quiz yang dirancang
+                                            khusus untuk mengevaluasi berbagai aspek kepribadian dan kemampuanmu.</p>
+                                    </div>
+                                </li>
+                                <!-- Single Service -->
+                                <li class="single-service media py-2">
+                                    <div class="service-icon pr-4">
+                                        <span><i class="fas fa-brush"></i></span>
+                                    </div>
+                                    <div class="service-text media-body">
+                                        <p>Desain yang dapat disesuaikan untuk pengalaman pengguna yang lebih baik,
+                                            memudahkan Anda dalam menavigasi dan menyelesaikan setiap quiz.</p>
+                                    </div>
+                                </li>
+                                <!-- Single Service -->
+                                <li class="single-service media py-2">
+                                    <div class="service-icon pr-4">
+                                        <span><i class="fas fa-burn"></i></span>
+                                    </div>
+                                    <div class="service-text media-body">
+                                        <p>Ikuti quiz kami yang inovatif dan menantang untuk menguji kemampuan berpikir
+                                            kritis dan keterampilan analitis Anda.</p>
+                                    </div>
+                                </li>
+                                <!-- Single Service -->
+                                <li class="single-service media py-2">
+                                    <div class="service-icon pr-4">
+                                        <span><i class="fas fa-cart-arrow-down"></i></span>
+                                    </div>
+                                    <div class="service-text media-body">
+                                        <p>Gunakan hasil assessment untuk merencanakan langkah-langkah pengembangan diri
+                                            yang lebih efektif dan terarah.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <a href="{{ route('auth.login') }}" class="btn btn-bordered mt-4">Pelajari Lebih
+                                Lanjut</a>
+                        </div>
                     </div>
-
-                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                    <div class="col-12 col-lg-4 order-1 order-lg-2 d-none d-lg-block">
+                        <!-- Service Thumb -->
+                        <div class="service-thumb mx-auto">
+                            <img src="{{ asset('assets/images/mockup/Mockup-Assesment.png') }}"
+                                alt="Mockup Assesment">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </body>
+        </section>
+        <!-- ***** Service Area End ***** -->
+
+        <!-- ***** Discover Area Start ***** -->
+        <section id="grup" class="section discover-area overflow-hidden ptb_100">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-12 col-lg-6 order-2 order-lg-1">
+                        <!-- Discover Thumb -->
+                        <div class="service-thumb discover-thumb mx-auto pt-5 pt-lg-0">
+                            <img src="{{ asset('assets/images/mockup/Mockup-Group.png') }}" alt="Mockup Group">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 order-1 order-lg-2">
+                        <!-- Discover Text -->
+                        <div class="discover-text pt-4 pt-lg-0">
+                            <h2 class="pb-4 pb-sm-0">Berkomunikasi dengan Grup</h2>
+                            <p class="d-none d-sm-block pt-3 pb-4">Aplikasi kami memungkinkan Anda untuk terhubung dan
+                                berkomunikasi dengan anggota grup lainnya. Diskusikan hasil kuis, bertukar pikiran, dan
+                                dapatkan umpan balik yang berguna.</p>
+                            <!-- Check List -->
+                            <ul class="check-list">
+                                <li class="py-1">
+                                    <!-- List Box -->
+                                    <div class="list-box media">
+                                        <span class="icon align-self-center"><i class="fas fa-check"></i></span>
+                                        <span class="media-body pl-3">Interaksi yang mudah dan efisien dengan berbagai
+                                            fitur komunikasi yang tersedia.</span>
+                                    </div>
+                                </li>
+                                <li class="py-1">
+                                    <!-- List Box -->
+                                    <div class="list-box media">
+                                        <span class="icon align-self-center"><i class="fas fa-check"></i></span>
+                                        <span class="media-body pl-3">Diskusi terarah dan produktif untuk meningkatkan
+                                            pemahaman dan pengembangan diri.</span>
+                                    </div>
+                                </li>
+                                <li class="py-1">
+                                    <!-- List Box -->
+                                    <div class="list-box media">
+                                        <span class="icon align-self-center"><i class="fas fa-check"></i></span>
+                                        <span class="media-body pl-3">Berbagi informasi dan sumber daya dengan anggota
+                                            grup secara mudah.</span>
+                                    </div>
+                                </li>
+                                <li class="py-1">
+                                    <!-- List Box -->
+                                    <div class="list-box media">
+                                        <span class="icon align-self-center"><i class="fas fa-check"></i></span>
+                                        <span class="media-body pl-3">Komunikasi yang terorganisir dengan baik untuk
+                                            menjaga fokus dan tujuan grup.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="icon-box d-flex mt-3">
+                                <div class="service-icon">
+                                    <span><i class="fas fa-bell"></i></span>
+                                </div>
+                                <div class="service-icon px-3">
+                                    <span><i class="fas fa-envelope-open"></i></span>
+                                </div>
+                                <div class="service-icon">
+                                    <span><i class="fas fa-video"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Discover Area End ***** -->
+
+        <!-- ***** Work Area Start ***** -->
+        <section id="tutor" class="section work-area bg-overlay overflow-hidden ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <!-- Work Content -->
+                        <div class="work-content text-center">
+                            <h2 class="text-white">Bagaimana Korsera bekerja?</h2>
+                            <p class="d-none d-sm-block text-white my-3 mt-sm-4 mb-sm-5">Anda bisa bergabung dengan
+                                grup dan mengerjakan quiz, kemudian anda dapat mengenali diri anda lebih dalam dengan
+                                melihat rekap pengerjaan.</p>
+                            <p class="d-block d-sm-none text-white my-3">Anda bisa bergabung dengan grup dan
+                                mengerjakan quiz, kemudian anda dapat mengenali diri anda lebih dalam dengan melihat
+                                rekap pengerjaan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <!-- Single Work -->
+                        <div class="single-work text-center p-3">
+                            <!-- Work Icon -->
+                            <div class="work-icon">
+                                <img class="avatar-md"
+                                    src="{{ asset('assets/landing-page/img/icon/work/download.png') }}"
+                                    alt="Download Icon">
+                            </div>
+                            <h3 class="text-white py-3">Buat Akun</h3>
+                            <p class="text-white">Mulailah dengan membuat akun di Korsera dan dapatkan akses ke
+                                berbagai fitur menarik yang kami tawarkan.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <!-- Single Work -->
+                        <div class="single-work text-center p-3">
+                            <!-- Work Icon -->
+                            <div class="work-icon">
+                                <img class="avatar-md"
+                                    src="{{ asset('assets/landing-page/img/icon/work/settings.png') }}"
+                                    alt="Settings Icon">
+                            </div>
+                            <h3 class="text-white py-3">Mengerjakan Kuis</h3>
+                            <p class="text-white">Bergabunglah dengan grup, ikuti kuis yang tersedia, dan uji
+                                pengetahuan serta kemampuanmu dalam berbagai topik.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <!-- Single Work -->
+                        <div class="single-work text-center p-3">
+                            <!-- Work Icon -->
+                            <div class="work-icon">
+                                <img class="avatar-md" src="{{ asset('assets/landing-page/img/icon/work/app.png') }}"
+                                    alt="App Icon">
+                            </div>
+                            <h3 class="text-white py-3">Lihat Rekap Pengerjaan</h3>
+                            <p class="text-white">Tinjau hasil kuismu untuk memahami lebih dalam tentang dirimu dan
+                                identifikasi area yang bisa kamu kembangkan lebih lanjut.</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- ***** Work Area End ***** -->
+
+        <!-- ***** Screenshots Area Start ***** -->
+        {{-- <section id="screenshots" class="section screenshots-area ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <!-- Section Heading -->
+                        <div class="section-heading text-center">
+                            <span class="d-inline-block rounded-pill shadow-sm fw-5 px-4 py-2 mb-3">
+                                <i class="far fa-lightbulb text-primary mr-1"></i>
+                                <span class="text-primary">Awesome</span>
+                                Interface
+                            </span>
+                            <h2 class="text-capitalize">Simple &amp; Beautiful Interface</h2>
+                            <p class="d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.
+                            </p>
+                            <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Laborum obcaecati.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <!-- App Screenshot Slider Area -->
+                        <div class="app-screenshots">
+                            <!-- Single Screenshot Item -->
+                            <div class="single-screenshot">
+                                <img src="assets/img/screenshots/1.jpg" alt="">
+                            </div>
+                            <!-- Single Screenshot Item -->
+                            <div class="single-screenshot">
+                                <img src="assets/img/screenshots/2.jpg" alt="">
+                            </div>
+                            <!-- Single Screenshot Item -->
+                            <div class="single-screenshot">
+                                <img src="assets/img/screenshots/3.jpg" alt="">
+                            </div>
+                            <!-- Single Screenshot Item -->
+                            <div class="single-screenshot">
+                                <img src="assets/img/screenshots/4.jpg" alt="">
+                            </div>
+                            <!-- Single Screenshot Item -->
+                            <div class="single-screenshot">
+                                <img src="assets/img/screenshots/5.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> --}}
+        <!-- ***** Screenshots Area End ***** -->
+
+        <!-- ***** Review Area Start ***** -->
+        {{-- <section id="review" class="review-area ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <!-- Section Heading -->
+                        <div class="section-heading text-center">
+                            <span class="d-inline-block rounded-pill shadow-sm fw-5 px-4 py-2 mb-3">
+                                <i class="far fa-lightbulb text-primary mr-1"></i>
+                                <span class="text-primary">Customer's</span>
+                                Reviews
+                            </span>
+                            <h2 class="text-capitalize">What our customers are saying</h2>
+                            <p class="d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.
+                            </p>
+                            <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Laborum obcaecati.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 res-margin">
+                        <!-- Single Review -->
+                        <div class="single-review card">
+                            <!-- Card Top -->
+                            <div class="card-top p-4">
+                                <div class="review-icon">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                                <h4 class="text-primary mt-4 mb-3">Excellent service &amp; support!!</h4>
+                                <!-- Review Text -->
+                                <div class="review-text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis nam id facilis,
+                                        provident doloremque placeat eveniet molestias laboriosam. Optio, esse.</p>
+                                </div>
+                                <!-- Quotation Icon -->
+                                <div class="quot-icon">
+                                    <img class="avatar-md" src="assets/img/icon/quote.png" alt="">
+                                </div>
+                            </div>
+                            <!-- Reviewer -->
+                            <div class="reviewer media bg-gray p-4">
+                                <!-- Reviewer Thumb -->
+                                <div class="reviewer-thumb">
+                                    <img class="avatar-lg radius-100" src="assets/img/avatar/avatar-1.png"
+                                        alt="">
+                                </div>
+                                <!-- Reviewer Media -->
+                                <div class="reviewer-meta media-body align-self-center ml-4">
+                                    <h5 class="reviewer-name color-primary mb-2">Junaid Hasan</h5>
+                                    <h6 class="text-secondary fw-6">CEO, Themeland</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 res-margin">
+                        <!-- Single Review -->
+                        <div class="single-review card">
+                            <!-- Card Top -->
+                            <div class="card-top p-4">
+                                <div class="review-icon">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                </div>
+                                <h4 class="text-primary mt-4 mb-3">Nice work! Keep it up</h4>
+                                <!-- Review Text -->
+                                <div class="review-text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis nam id facilis,
+                                        provident doloremque placeat eveniet molestias laboriosam. Optio, esse.</p>
+                                </div>
+                                <!-- Quotation Icon -->
+                                <div class="quot-icon">
+                                    <img class="avatar-md" src="assets/img/icon/quote.png" alt="">
+                                </div>
+                            </div>
+                            <!-- Reviewer -->
+                            <div class="reviewer media bg-gray p-4">
+                                <!-- Reviewer Thumb -->
+                                <div class="reviewer-thumb">
+                                    <img class="avatar-lg radius-100" src="assets/img/avatar/avatar-2.png"
+                                        alt="">
+                                </div>
+                                <!-- Reviewer Media -->
+                                <div class="reviewer-meta media-body align-self-center ml-4">
+                                    <h5 class="reviewer-name color-primary mb-2">Junaid Hasan</h5>
+                                    <h6 class="text-secondary fw-6">CEO, Themeland</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <!-- Single Review -->
+                        <div class="single-review card">
+                            <!-- Card Top -->
+                            <div class="card-top p-4">
+                                <div class="review-icon">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                                <h4 class="text-primary mt-4 mb-3">Great support!!</h4>
+                                <!-- Review Text -->
+                                <div class="review-text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis nam id facilis,
+                                        provident doloremque placeat eveniet molestias laboriosam. Optio, esse.</p>
+                                </div>
+                                <!-- Quotation Icon -->
+                                <div class="quot-icon">
+                                    <img class="avatar-md" src="assets/img/icon/quote.png" alt="">
+                                </div>
+                            </div>
+                            <!-- Reviewer -->
+                            <div class="reviewer media bg-gray p-4">
+                                <!-- Reviewer Thumb -->
+                                <div class="reviewer-thumb">
+                                    <img class="avatar-lg radius-100" src="assets/img/avatar/avatar-3.png"
+                                        alt="">
+                                </div>
+                                <!-- Reviewer Media -->
+                                <div class="reviewer-meta media-body align-self-center ml-4">
+                                    <h5 class="reviewer-name color-primary mb-2">Junaid Hasan</h5>
+                                    <h6 class="text-secondary fw-6">CEO, Themeland</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> --}}
+        <!-- ***** Review Area End ***** -->
+
+        <!-- ***** Price Plan Area Start ***** -->
+        {{-- <section id="pricing" class="section price-plan-area bg-gray overflow-hidden ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <!-- Section Heading -->
+                        <div class="section-heading text-center">
+                            <h2>Unlock Full Power Of sApp</h2>
+                            <p class="d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.
+                            </p>
+                            <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Laborum obcaecati.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-10 col-lg-8">
+                        <div class="row price-plan-wrapper">
+                            <div class="col-12 col-md-6">
+                                <!-- Single Price Plan -->
+                                <div class="single-price-plan text-center p-5 wow fadeInLeft" data-aos-duration="2s"
+                                    data-wow-delay="0.4s">
+                                    <!-- Plan Thumb -->
+                                    <div class="plan-thumb">
+                                        <img class="avatar-lg" src="assets/img/pricing/basic.png" alt="">
+                                    </div>
+                                    <!-- Plan Title -->
+                                    <div class="plan-title my-2 my-sm-3">
+                                        <h4 class="text-uppercase">Basic</h4>
+                                    </div>
+                                    <!-- Plan Price -->
+                                    <div class="plan-price pb-2 pb-sm-3">
+                                        <h2 class="fw-7"><small class="fw-6">$</small>49</h2>
+                                    </div>
+                                    <!-- Plan Description -->
+                                    <div class="plan-description">
+                                        <ul class="plan-features">
+                                            <li class="border-top py-3">5GB Linux Web Space</li>
+                                            <li class="border-top py-3">5 MySQL Databases</li>
+                                            <li class="border-top py-3">24/7 Tech Support</li>
+                                            <li class="border-top border-bottom py-3">Daily Backups</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Plan Button -->
+                                    <div class="plan-button">
+                                        <a href="#" class="btn mt-4">Sign Up</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 mt-4 mt-md-0">
+                                <!-- Single Price Plan -->
+                                <div class="single-price-plan text-center p-5 wow fadeInRight" data-aos-duration="2s"
+                                    data-wow-delay="0.4s">
+                                    <!-- Plan Thumb -->
+                                    <div class="plan-thumb">
+                                        <img class="avatar-lg" src="assets/img/pricing/premium.png" alt="">
+                                    </div>
+                                    <!-- Plan Title -->
+                                    <div class="plan-title my-2 my-sm-3">
+                                        <h4 class="text-uppercase">Pro</h4>
+                                    </div>
+                                    <!-- Plan Price -->
+                                    <div class="plan-price pb-2 pb-sm-3">
+                                        <h2 class="fw-7"><small class="fw-6">$</small>129</h2>
+                                    </div>
+                                    <!-- Plan Description -->
+                                    <div class="plan-description">
+                                        <ul class="plan-features">
+                                            <li class="border-top py-3">10GB Linux Web Space</li>
+                                            <li class="border-top py-3">50 MySQL Databases</li>
+                                            <li class="border-top py-3">Unlimited Email</li>
+                                            <li class="border-top border-bottom py-3">Daily Backups</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Plan Button -->
+                                    <div class="plan-button">
+                                        <a href="#" class="btn mt-4">Sign Up</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center pt-5">
+                    <p class="text-body pt-4 fw-5">Not sure what to choose? <a href="#">Contact Us</a></p>
+                </div>
+            </div>
+        </section> --}}
+        <!-- ***** Price Plan Area End ***** -->
+
+        <!-- ***** FAQ Area Start ***** -->
+        {{-- <section class="section faq-area style-two ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <!-- Section Heading -->
+                        <div class="section-heading text-center">
+                            <h2 class="text-capitalize">Frequently asked questions</h2>
+                            <p class="d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.
+                            </p>
+                            <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Laborum obcaecati.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <!-- FAQ Content -->
+                        <div class="faq-content">
+                            <!-- sApp Accordion -->
+                            <div class="accordion" id="sApp-accordion">
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-6">
+                                        <!-- Single Card -->
+                                        <div class="card border-0">
+                                            <!-- Card Header -->
+                                            <div class="card-header bg-inherit border-0 p-0">
+                                                <h2 class="mb-0">
+                                                    <button class="btn px-0 py-3" type="button">
+                                                        How to install sApp?
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <!-- Card Body -->
+                                            <div class="card-body px-0 py-3">
+                                                The point of using Lorem Ipsum is that it has a more-or-less normal
+                                                distribution of letters, as opposed to using 'Content here, content
+                                                here', making it look like readable English. Many desktop publishing
+                                                packages and web page editors now use Lorem Ipsum as their default model
+                                                text.
+                                            </div>
+                                        </div>
+                                        <!-- Single Card -->
+                                        <div class="card border-0">
+                                            <!-- Card Header -->
+                                            <div class="card-header bg-inherit border-0 p-0">
+                                                <h2 class="mb-0">
+                                                    <button class="btn px-0 py-3" type="button">
+                                                        Can I get support from the Author?
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <!-- Card Body -->
+                                            <div class="card-body px-0 py-3">
+                                                Contrary to popular belief, Lorem Ipsum is not simply random text. It
+                                                has roots in a piece of classical Latin literature from 45 BC, making it
+                                                over 2000 years old. Richard McClintock, a Latin professor at
+                                                Hampden-Sydney College in Virginia, looked up one of the more obscure
+                                                Latin words, consectetur, from a Lorem Ipsum passage, and going through
+                                                the cites of the word in classical literature, discovered the
+                                                undoubtable source.
+                                            </div>
+                                        </div>
+                                        <!-- Single Card -->
+                                        <div class="card border-0">
+                                            <!-- Card Header -->
+                                            <div class="card-header bg-inherit border-0 p-0">
+                                                <h2 class="mb-0">
+                                                    <button class="btn px-0 py-3" type="button">
+                                                        Do you have a free trail?
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <!-- Card Body -->
+                                            <div class="card-body px-0 py-3">
+                                                It has survived not only five centuries, but also the leap into
+                                                electronic typesetting, remaining essentially unchanged. It was
+                                                popularised in the 1960s with the release of Letraset sheets containing
+                                                Lorem Ipsum passages, and more recently with desktop publishing software
+                                                like Aldus PageMaker including versions of Lorem Ipsum.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <!-- Single Card -->
+                                        <div class="card border-0">
+                                            <!-- Card Header -->
+                                            <div class="card-header bg-inherit border-0 p-0">
+                                                <h2 class="mb-0">
+                                                    <button class="btn px-0 py-3" type="button">
+                                                        How can I edit my personal information?
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <!-- Card Body -->
+                                            <div class="card-body px-0 py-3">
+                                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+                                                illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                                                explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+                                                odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                                                voluptatem sequi nesciunt.
+                                            </div>
+                                        </div>
+                                        <!-- Single Card -->
+                                        <div class="card border-0">
+                                            <!-- Card Header -->
+                                            <div class="card-header bg-inherit border-0 p-0">
+                                                <h2 class="mb-0">
+                                                    <button class="btn px-0 py-3" type="button">
+                                                        Contact form isn't working?
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <!-- Card Body -->
+                                            <div class="card-body px-0 py-3">
+                                                There are many variations of passages of Lorem Ipsum available, but the
+                                                majority have suffered alteration in some form, by injected humour, or
+                                                randomised words which don't look even slightly believable. If you are
+                                                going to use a passage of Lorem Ipsum, you need to be sure there isn't
+                                                anything embarrassing hidden in the middle of text.
+                                            </div>
+                                        </div>
+                                        <!-- Single Card -->
+                                        <div class="card border-0">
+                                            <!-- Card Header -->
+                                            <div class="card-header bg-inherit border-0 p-0">
+                                                <h2 class="mb-0">
+                                                    <button class="btn px-0 py-3" type="button">
+                                                        Contact form isn't working?
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <!-- Card Body -->
+                                            <div class="card-body px-0 py-3">
+                                                There are many variations of passages of Lorem Ipsum available, but the
+                                                majority have suffered alteration in some form, by injected humour, or
+                                                randomised words which don't look even slightly believable. If you are
+                                                going to use a passage of Lorem Ipsum, you need to be sure there isn't
+                                                anything embarrassing hidden in the middle of text.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <p class="text-body text-center pt-4 px-3 fw-5">Haven't find suitable answer? <a
+                                            href="#">Tell us what you need.</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> --}}
+        <!-- ***** FAQ Area End ***** -->
+
+        <!-- ***** Team Area Start ***** -->
+        <section id="tim" class="section team-area team-style-two overflow-hidden ptb_100" id="tim">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <!-- Section Heading -->
+                        <div class="section-heading text-center">
+                            <h2 class="text-capitalize">Tim Kami</h2>
+                            <p class="d-none d-sm-block mt-4">Programmer yang membangun website Korsera ini.
+                            </p>
+                            <p class="d-block d-sm-none mt-4">Programmer yang membangun website Korsera ini.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <!-- Single Team -->
+                        <div class="single-team text-center overflow-hidden m-2 m-lg-0">
+                            <!-- Team Thumb -->
+                            <div class="team-thumb d-inline-block position-relative overflow-hidden">
+                                <img src="{{ asset('assets/images/avatar/adi.jpeg') }}" alt="">
+                                <!-- Team Overlay -->
+                                <div class="team-overlay">
+                                    <h4 class="team-name text-white">Adi Kurniawan</h4>
+                                    <h6 class="team-post text-white mt-2 mb-3">Web Developer</h6>
+                                    <!-- Team Icons -->
+                                    <div class="team-icons">
+                                        <a class="p-2" href="https://github.com/KaitoDeCode" target="_blank"><i
+                                                class="fab fa-github"></i></a>
+                                        <a class="p-2" href="https://www.instagram.com/_this.adi/"
+                                            target="_blank"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <!-- Single Team -->
+                        <div class="single-team text-center overflow-hidden m-2 m-lg-0">
+                            <!-- Team Thumb -->
+                            <div class="team-thumb d-inline-block position-relative overflow-hidden">
+                                <img src="{{ asset('assets/images/avatar/yafy.jpg') }}" alt="">
+                                <!-- Team Overlay -->
+                                <div class="team-overlay">
+                                    <h4 class="team-name text-white">Yafy Habibi</h4>
+                                    <h6 class="team-post text-white mt-2 mb-3">Web Developer</h6>
+                                    <!-- Team Icons -->
+                                    <div class="team-icons">
+                                        <a class="p-2" href="https://github.com/Yapidev" target="_blank"><i
+                                                class="fab fa-github"></i></a>
+                                        <a class="p-2" href="https://www.instagram.com/yafyhbb/"
+                                            target="_blank"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Team Area End ***** -->
+
+        <!-- ***** Download Area Start ***** -->
+        {{-- <section class="section download-area overlay-dark ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-9">
+                        <!-- Download Text -->
+                        <div class="download-text text-center">
+                            <h2 class="text-white">sApp is available for all devices</h2>
+                            <p class="text-white my-3 d-none d-sm-block">sApp is available for all devices, consectetur
+                                adipisicing elit. Itaque at harum quam explicabo. Aliquam optio, delectus, dolorem quod
+                                neque eos totam. Delectus quae animi tenetur voluptates doloribus commodi dicta modi
+                                aliquid deserunt, quis maiores nesciunt autem, aperiam natus.</p>
+                            <p class="text-white my-3 d-block d-sm-none">sApp is available for all devices, consectetur
+                                adipisicing elit. Vel neque, cumque. Temporibus eligendi veniam, necessitatibus aut id
+                                labore nisi quisquam.</p>
+                            <!-- Store Buttons -->
+                            <div class="button-group store-buttons d-flex justify-content-center">
+                                <a href="#">
+                                    <img src="assets/img/icon/google-play.png" alt="">
+                                </a>
+                                <a href="#">
+                                    <img src="assets/img/icon/app-store.png" alt="">
+                                </a>
+                            </div>
+                            <span class="d-inline-block text-white fw-3 font-italic mt-3">* Available on iPhone, iPad
+                                and all Android devices</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> --}}
+        <!-- ***** Download Area End ***** -->
+
+        <!-- ***** Subscribe Area Start ***** -->
+        {{-- <section class="section subscribe-area ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <div class="subscribe-content text-center">
+                            <h2>Subscribe to get updates</h2>
+                            <p class="my-4">By subscribing you will get newsleter, promotions adipisicing elit.
+                                Architecto beatae, asperiores tempore repudiandae saepe aspernatur unde voluptate
+                                sapiente quia ex.</p>
+                            <!-- Subscribe Form -->
+                            <form class="subscribe-form">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="Enter your email">
+                                </div>
+                                <button type="submit" class="btn btn-lg btn-block">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> --}}
+        <!-- ***** Subscribe Area End ***** -->
+
+        <!--====== Contact Area Start ======-->
+        {{-- <section id="contact" class="contact-area bg-gray ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <!-- Section Heading -->
+                        <div class="section-heading text-center">
+                            <h2 class="text-capitalize">Stay Tuned</h2>
+                            <p class="d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.
+                            </p>
+                            <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Laborum obcaecati.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-12 col-md-5">
+                        <!-- Contact Us -->
+                        <div class="contact-us">
+                            <p class="mb-3">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                                roots in a piece of classical Latin literature from 45 BC, making it over 2000 years
+                                old.</p>
+                            <ul>
+                                <li class="py-2">
+                                    <a class="media" href="#">
+                                        <div class="social-icon mr-3">
+                                            <i class="fas fa-home"></i>
+                                        </div>
+                                        <span class="media-body align-self-center">Vestibulum nulla libero, convallis,
+                                            tincidunt suscipit diam, DC 2002</span>
+                                    </a>
+                                </li>
+                                <li class="py-2">
+                                    <a class="media" href="#">
+                                        <div class="social-icon mr-3">
+                                            <i class="fas fa-phone-alt"></i>
+                                        </div>
+                                        <span class="media-body align-self-center">+1 230 456 789-012 345 6789</span>
+                                    </a>
+                                </li>
+                                <li class="py-2">
+                                    <a class="media" href="#">
+                                        <div class="social-icon mr-3">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <span class="media-body align-self-center">exampledomain@domain.com</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 pt-4 pt-md-0">
+                        <!-- Contact Box -->
+                        <div class="contact-box text-center">
+                            <!-- Contact Form -->
+                            <form id="contact-form" method="POST"
+                                action="https://theme-land.com/sapp/demo/assets/php/mail.php">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="name"
+                                                placeholder="Name" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="email"
+                                                placeholder="Email" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="subject"
+                                                placeholder="Subject" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <textarea class="form-control" name="message" placeholder="Message" required="required"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-lg btn-block mt-3"><span
+                                                class="text-white pr-3"><i class="fas fa-paper-plane"></i></span>Send
+                                            Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <p class="form-message"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> --}}
+        <!--====== Contact Area End ======-->
+
+        <!--====== Height Emulator Area Start ======-->
+        <div class="height-emulator d-none d-lg-block"></div>
+        <!--====== Height Emulator Area End ======-->
+
+        <!--====== Footer Area Start ======-->
+        <footer class="footer-area footer-fixed">
+            <!-- Footer Top -->
+            <div class="footer-top ptb_100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <!-- Footer Items -->
+                            <div class="footer-items">
+                                <!-- Logo -->
+                                <a class="navbar-brand" href="#">
+                                    <img class="logo" src="{{ asset('assets/images/new-logo.png') }}" alt="logo-brand" style="width: 50px">
+                                </a>
+                                <p class="mt-2 mb-3">Korsera adalah aplikasi untuk penilaian dan pengembangan diri.
+                                    Dapatkan wawasan dan strategi personalisasi untuk mencapai potensi penuh. Mulailah
+                                    perjalanan Anda dengan Korsera sekarang!</p>
+                                <!-- Social Icons -->
+                                <div class="social-icons d-flex">
+                                    <a class="facebook" href="#">
+                                        <i class="fab fa-facebook-f"></i>
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a class="twitter" href="#">
+                                        <i class="fab fa-twitter"></i>
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a class="google-plus" href="#">
+                                        <i class="fab fa-google-plus-g"></i>
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </a>
+                                    <a class="vine" href="#">
+                                        <i class="fab fa-vine"></i>
+                                        <i class="fab fa-vine"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <!-- Footer Items -->
+                            <div class="footer-items">
+                                <!-- Footer Title -->
+                                <h3 class="footer-title mb-2">Navigasi</h3>
+                                <ul>
+                                    <li class="py-2"><a class="scroll" href="#home">Home</a></li>
+                                    <li class="py-2"><a class="scroll" href="#layanan">Layanan</a></li>
+                                    <li class="py-2"><a class="scroll" href="#quiz">Quiz</a></li>
+                                    <li class="py-2"><a class="scroll" href="#grup">Grup</a></li>
+                                    <li class="py-2"><a class="scroll" href="#tutor">Cara kerja</a></li>
+                                    <li class="py-2"><a class="scroll" href="#tim">Tim</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <!-- Footer Items -->
+                            <div class="footer-items">
+                                <!-- Footer Title -->
+                                <h3 class="footer-title mb-2">Product Help</h3>
+                                <ul>
+                                    <li class="py-2"><a href="#">FAQ</a></li>
+                                    <li class="py-2"><a href="#">Privacy Policy</a></li>
+                                    <li class="py-2"><a href="#">Support</a></li>
+                                    <li class="py-2"><a href="#">Terms &amp; Conditions</a></li>
+                                    <li class="py-2"><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <!-- Footer Items -->
+                            <div class="footer-items">
+                                <!-- Footer Title -->
+                                <h3 class="footer-title mb-2">Download</h3>
+                                <!-- Store Buttons -->
+                                <div class="button-group store-buttons store-black d-flex flex-wrap">
+                                    <a href="#">
+                                        <img src="{{ asset('assets/landing-page/img/icon/google-play-black.png') }}"
+                                            alt="">
+                                    </a>
+                                    <a href="#">
+                                        <img src="{{ asset('assets/landing-page/img/icon/app-store-black.png') }}"
+                                            alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Copyright Area -->
+                            <div
+                                class="copyright-area d-flex flex-wrap justify-content-center justify-content-sm-between text-center py-4">
+                                <!-- Copyright Left -->
+                                <div class="copyright-left">&copy; Copyrights 2024 Korsera All rights reserved.</div>
+                                <!-- Copyright Right -->
+                                <div class="copyright-right">Made with <i class="fas fa-heart"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--====== Footer Area End ======-->
+    </div>
+
+
+    <!-- ***** All jQuery Plugins ***** -->
+
+    <!-- jQuery(necessary for all JavaScript plugins) -->
+    <script src="{{ asset('assets/landing-page/js/jquery/jquery.min.js') }}"></script>
+
+    <!-- Bootstrap js -->
+    <script src="{{ asset('assets/landing-page/js/bootstrap/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/landing-page/js/bootstrap/bootstrap.min.js') }}"></script>
+
+    <!-- Plugins js -->
+    <script src="{{ asset('assets/landing-page/js/plugins/plugins.min.js') }}"></script>
+
+    <!-- Active js -->
+    <script src="{{ asset('assets/landing-page/js/active.js') }}"></script>
+
+</body>
+
+
+<!-- Mirrored from theme-land.com/sapp/demo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jun 2024 01:23:08 GMT -->
+
 </html>
