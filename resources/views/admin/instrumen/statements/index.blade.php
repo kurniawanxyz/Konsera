@@ -35,8 +35,8 @@
             <td>{{$item->favorable}}</td>
             <td>
                 <a href="{{ route('statements.edit', $item->id) }}" class="btn btn-warning">Edit</a>
-                <button type="button" onclick="handleConfirmDelete('deleteSubCriteria')" class="btn btn-danger">Delete</button>
-                <form id="deleteSubCriteria" action="{{ route('statements.destroy', $item->id) }}" method="POST" class="d-none" style="display:inline;">
+                <button type="button" onclick="handleConfirmDelete('statement-{{$item->id}}')" class="btn btn-danger">Delete</button>
+                <form id="statement-{{$item->id}}" action="{{ route('statements.destroy', $item->id) }}" method="POST" class="d-none" style="display:inline;">
                     @csrf
                     @method('DELETE')
                 </form>
