@@ -930,7 +930,7 @@
                         <div class="single-team text-center overflow-hidden m-2 m-lg-0">
                             <!-- Team Thumb -->
                             <div class="team-thumb d-inline-block position-relative overflow-hidden">
-                                <img src="{{ asset('assets/images/avatar/yafy.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/avatar/yafy v2.jpg') }}" alt="">
                                 <!-- Team Overlay -->
                                 <div class="team-overlay">
                                     <h4 class="team-name text-white">Yafy Habibi</h4>
