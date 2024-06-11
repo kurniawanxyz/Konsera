@@ -12,7 +12,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Korsera | Landing Page</title>
+    <title>Konsera | Landing Page</title>
 
     <!-- Favicon  -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
@@ -88,12 +88,12 @@
                     <!-- Welcome Intro Start -->
                     <div class="col-12 col-md-7 col-lg-6">
                         <div class="welcome-intro">
-                            <h1 class="text-white">Bangun Masa Depanmu dengan Korsera</h1>
-                            <p class="text-white my-4">Korsera adalah aplikasi inovatif untuk penilaian dan pengembangan
+                            <h1 class="text-white">Bangun Masa Depanmu dengan Konsera</h1>
+                            <p class="text-white my-4">Konsera adalah aplikasi inovatif untuk penilaian dan pengembangan
                                 diri. Dapatkan wawasan mendalam tentang kekuatan dan kelemahan Anda, serta strategi yang
                                 dipersonalisasi untuk mencapai potensi penuh Anda. Mulailah perjalanan menuju versi
-                                terbaik dari diri Anda dengan Korsera.</p>
-                            <p class="text-white my-4">Filosofi logo Korsera melambangkan pertumbuhan pribadi. Logo
+                                terbaik dari diri Anda dengan Konsera.</p>
+                            <p class="text-white my-4">Filosofi logo Konsera melambangkan pertumbuhan pribadi. Logo
                                 berbentuk huruf "K" berwarna ungu mencerminkan kemajuan dan transformasi diri. Warna
                                 ungu melambangkan kreativitas, kebijaksanaan, dan ambisi. Desain logo ini mengajak Anda
                                 untuk menemukan potensi tersembunyi dan mewujudkan impian Anda.</p>
@@ -241,7 +241,7 @@
                             <div class="icon-text">
                                 <h3 class="mb-2">UI/UX User Friendly</h3>
                                 <p>Tampilan yang rapi dan bersih membuat pengguna nyaman dalam mengerjakan kuis yang
-                                    tersedia di aplikasi Korsera ini, sehingga meningkatkan pengalaman pengguna dalam
+                                    tersedia di aplikasi Konsera ini, sehingga meningkatkan pengalaman pengguna dalam
                                     menggunakan web ini.</p>
                             </div>
                         </div>
@@ -395,7 +395,7 @@
                     <div class="col-12 col-md-10 col-lg-8">
                         <!-- Work Content -->
                         <div class="work-content text-center">
-                            <h2 class="text-white">Bagaimana Korsera bekerja?</h2>
+                            <h2 class="text-white">Bagaimana Konsera bekerja?</h2>
                             <p class="d-none d-sm-block text-white my-3 mt-sm-4 mb-sm-5">Anda bisa bergabung dengan
                                 grup dan mengerjakan quiz, kemudian anda dapat mengenali diri anda lebih dalam dengan
                                 melihat rekap pengerjaan.</p>
@@ -416,7 +416,7 @@
                                     alt="Download Icon">
                             </div>
                             <h3 class="text-white py-3">Buat Akun</h3>
-                            <p class="text-white">Mulailah dengan membuat akun di Korsera dan dapatkan akses ke
+                            <p class="text-white">Mulailah dengan membuat akun di Konsera dan dapatkan akses ke
                                 berbagai fitur menarik yang kami tawarkan.</p>
                         </div>
                     </div>
@@ -900,9 +900,9 @@
                         <!-- Section Heading -->
                         <div class="section-heading text-center">
                             <h2 class="text-capitalize">Tim Kami</h2>
-                            <p class="d-none d-sm-block mt-4">Programmer yang membangun website Korsera ini.
+                            <p class="d-none d-sm-block mt-4">Programmer yang membangun website Konsera ini.
                             </p>
-                            <p class="d-block d-sm-none mt-4">Programmer yang membangun website Korsera ini.</p>
+                            <p class="d-block d-sm-none mt-4">Programmer yang membangun website Konsera ini.</p>
                         </div>
                     </div>
                 </div>
@@ -1123,9 +1123,9 @@
                                     <img class="logo" src="{{ asset('assets/images/new-logo.png') }}"
                                         alt="logo-brand" style="width: 50px">
                                 </a>
-                                <p class="mt-2 mb-3">Korsera adalah aplikasi untuk penilaian dan pengembangan diri.
+                                <p class="mt-2 mb-3">Konsera adalah aplikasi untuk penilaian dan pengembangan diri.
                                     Dapatkan wawasan dan strategi personalisasi untuk mencapai potensi penuh. Mulailah
-                                    perjalanan Anda dengan Korsera sekarang!</p>
+                                    perjalanan Anda dengan Konsera sekarang!</p>
                                 <!-- Social Icons -->
                                 <div class="social-icons d-flex">
                                     <a class="facebook" href="#">
@@ -1206,7 +1206,7 @@
                             <div
                                 class="copyright-area d-flex flex-wrap justify-content-center justify-content-sm-between text-center py-4">
                                 <!-- Copyright Left -->
-                                <div class="copyright-left">&copy; Copyrights 2024 Korsera All rights reserved.</div>
+                                <div class="copyright-left">&copy; Copyrights 2024 Konsera All rights reserved.</div>
                                 <!-- Copyright Right -->
                                 <div class="copyright-right">Made with <i class="fas fa-heart"></i></div>
                             </div>

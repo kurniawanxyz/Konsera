@@ -22,11 +22,11 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.0.0
       with:
         # ftp server
-        server: korsera.dcode.my.id
+        server: konsera.kaitodecode.com
         # ftp username
-        username: admin@korsera.dcode.my.id
+        username: admin@konsera.kaitodecode.com
         # ftp password
-        password: st8URLt2epZ
+        password: TVEjE1Xeg5uY
         # Server port to connect to (read your web hosts docs)
         port: 21
         # protocol to deploy with - ftp, ftps, or ftps-legacy
