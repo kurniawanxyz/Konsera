@@ -89,9 +89,15 @@
                     <div class="col-12 col-md-7 col-lg-6">
                         <div class="welcome-intro">
                             <h1 class="text-white">Bangun Masa Depanmu dengan Korsera</h1>
-                            <p class="text-white my-4">Korsera adalah aplikasi inovatif untuk penilaian dan pengembangan diri. Dapatkan wawasan mendalam tentang kekuatan dan kelemahan Anda, serta strategi yang dipersonalisasi untuk mencapai potensi penuh Anda. Mulailah perjalanan menuju versi terbaik dari diri Anda dengan Korsera.</p>
-                            <p class="text-white my-4">Filosofi logo Korsera melambangkan pertumbuhan pribadi. Bentuk lingkaran dengan garis-garis yang mengarah ke dalam mencerminkan introspeksi dan penemuan diri. Warna biru melambangkan ketenangan dan kepercayaan, sementara hijau melambangkan pertumbuhan dan harmoni. Desain logo mengajak Anda untuk menemukan potensi tersembunyi dan mewujudkan impian Anda.</p>
-                                                    </div>
+                            <p class="text-white my-4">Korsera adalah aplikasi inovatif untuk penilaian dan pengembangan
+                                diri. Dapatkan wawasan mendalam tentang kekuatan dan kelemahan Anda, serta strategi yang
+                                dipersonalisasi untuk mencapai potensi penuh Anda. Mulailah perjalanan menuju versi
+                                terbaik dari diri Anda dengan Korsera.</p>
+                            <p class="text-white my-4">Filosofi logo Korsera melambangkan pertumbuhan pribadi. Logo
+                                berbentuk huruf "K" berwarna ungu mencerminkan kemajuan dan transformasi diri. Warna
+                                ungu melambangkan kreativitas, kebijaksanaan, dan ambisi. Desain logo ini mengajak Anda
+                                untuk menemukan potensi tersembunyi dan mewujudkan impian Anda.</p>
+                        </div>
                     </div>
                     <div class="col-12 col-md-5 col-lg-6">
                         <!-- Welcome Thumb -->
@@ -1114,7 +1120,8 @@
                             <div class="footer-items">
                                 <!-- Logo -->
                                 <a class="navbar-brand" href="#">
-                                    <img class="logo" src="{{ asset('assets/images/new-logo.png') }}" alt="logo-brand" style="width: 50px">
+                                    <img class="logo" src="{{ asset('assets/images/new-logo.png') }}"
+                                        alt="logo-brand" style="width: 50px">
                                 </a>
                                 <p class="mt-2 mb-3">Korsera adalah aplikasi untuk penilaian dan pengembangan diri.
                                     Dapatkan wawasan dan strategi personalisasi untuk mencapai potensi penuh. Mulailah
