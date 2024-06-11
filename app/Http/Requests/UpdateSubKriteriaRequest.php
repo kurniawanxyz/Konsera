@@ -24,6 +24,7 @@ class UpdateSubKriteriaRequest extends FormRequest
         return [
             "text" => "string|max:255",
             "description" => "string|max:1000",
+            "solutions" => "string"
         ];
     }
 }

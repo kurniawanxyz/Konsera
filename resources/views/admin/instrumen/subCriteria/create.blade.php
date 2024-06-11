@@ -26,8 +26,15 @@
             @enderror
         </div>
         <div class="d-flex flex-column mt-3">
-            <label for="description" class="form-label">Description</label>
+            <label for="description" class="form-label">Deskripsi</label>
             <textarea name="description" id="description" class="form-control">{{ old('description') }}</textarea>
+            @error('text')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="d-flex flex-column mt-3">
+            <label for="solutions" class="form-label">Solusi</label>
+            <textarea name="solutions" id="solutions" class="form-control">{{ old('solutions') }}</textarea>
             @error('text')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
