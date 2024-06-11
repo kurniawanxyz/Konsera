@@ -34,10 +34,10 @@ class PengerjaanController extends Controller
                 $jawaban = Answer::findOrFail($value);
                 // dd($jawaban,$pernyataan);
                 if($pernyataan == "unfav"){
-                    $point = $point+$jawaban->point_unfav; 
+                    $point = $point+$jawaban->point_unfav;
                 }
                 if($pernyataan == "fav"){
-                    $point = $point+$jawaban->point_fav; 
+                    $point = $point+$jawaban->point_fav;
                 }
             }
             auth()->user()->pengerjaanByInstrumen()->syncWithoutDetaching(
@@ -52,7 +52,7 @@ class PengerjaanController extends Controller
         }catch(Exception $e){
             return back()->with("error",$e->getMessage());
         }
-       
+
     }
 
     public function show($instrumen_id)
@@ -63,7 +63,11 @@ class PengerjaanController extends Controller
         $label =[];
 
         foreach($nilaiTiapSubKriteria as $item){
-            $nilaiPoint[]= ($item->pivot->point/$item->pivot->pointMax) * 100;
+            if($item->pivot->pointMax > 0){
+                $nilaiPoint[]= ($item->pivot->point/$item->pivot->pointMax) * 100;
+            }
+            $nilaiPoint[]= 0;
+
             $label[]= $item->text;
         }
         $nilaiPoint[]= 0;

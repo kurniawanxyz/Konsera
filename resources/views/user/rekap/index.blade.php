@@ -26,7 +26,7 @@
                 <td>{{$item['group']['name']}}</td>
                 <td>{{$item['criteria']['text']}}</td>
                 <td>
-                    <a href="{{route('rekap.show',$item["instrumen"]["id"])}}" class="btn btn-warning">Detail</a>
+                    <a href="{{route('rekap.show',["group_id" => $item['group']['id'],"instrumen_id" => $item['instrumen']['id']])}}" class="btn btn-warning">Detail</a>
                 </td>
             </tr>
             @empty
