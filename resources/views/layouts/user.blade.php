@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from kripton.dexignzone.com/xhtml/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 May 2024 20:04:18 GMT -->
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,21 +13,17 @@
     <meta property="og:description" content="Kripton : Crypto Admin Dashboard  Bootstrap 5 Template" />
     <meta property="og:image" content="social-image.png" />
     <meta name="format-detection" content="telephone=no">
+
     <title>
         @yield('title')
     </title>
-    <!-- Favicon icon -->
+
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendor/chartist/css/chartist.min.css') }}">
     <link href="{{ asset('assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/owl-carousel/owl.carousel.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/sweetalert2/dist/sweetalert2.min.css') }}" rel="stylesheet">
-    <style>
-        textarea {
-            resize: none;
-        }
-    </style>
 
     @livewireStyles
 </head>
@@ -60,7 +54,8 @@
         ***********************************-->
         <div class="nav-header">
             <a href="{{ route('user.dashboard') }}" class="brand-logo">
-                <img src="{{ asset('assets/images/new-logo.png') }}" alt="logo" class="logo-abbr" style="width: 50px">
+                <img src="{{ asset('assets/images/new-logo.png') }}" alt="logo" class="logo-abbr"
+                    style="width: 50px">
                 <h1 class="fw-bold text-black m-0 brand-title">KONSERA</h1>
             </a>
 
@@ -72,14 +67,6 @@
         </div>
         <!--**********************************
             Nav header end
-        ***********************************-->
-
-        <!--**********************************
-            Chat box start
-        ***********************************-->
-
-        <!--**********************************
-            Chat box End
         ***********************************-->
 
         <!--**********************************
@@ -122,7 +109,12 @@
         <!--**********************************
             Footer start
         ***********************************-->
-
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="#"
+                        >us</a> 2024</p>
+            </div>
+        </div>
         <!--**********************************
             Footer end
         ***********************************-->
@@ -162,8 +154,8 @@
     <script src="{{ asset('assets/js/deznav-init.js') }}"></script>
     <script src="{{ asset('assets/vendor/sweetalert2/dist/sweetalert2.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins-init/sweetalert.init.js') }}"></script>
-    <script src="{{ asset('vendor/chart.js/Chart.bundle.min.js')}}"></script>
-    <script src="{{ asset('js/plugins-init/chartjs-init.js')}}  "></script>
+    <script src="{{ asset('vendor/chart.js/Chart.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/plugins-init/chartjs-init.js') }}  "></script>
 
     @livewireScripts
 
@@ -173,7 +165,7 @@
     </script>
     {{-- Fix Modal Backdrop Issues --}}
 
-    @yield("script")
+    @yield('script')
 
     <script>
         function handleLogout(formId) {
@@ -208,8 +200,7 @@
             });
         }
     </script>
-</body>
 
-<!-- Mirrored from kripton.dexignzone.com/xhtml/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 May 2024 20:04:46 GMT -->
+</body>
 
 </html>
