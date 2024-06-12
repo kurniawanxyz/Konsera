@@ -61,8 +61,9 @@
         ***********************************-->
         <div class="nav-header">
             <a href="{{ route('user.dashboard') }}" class="brand-logo">
-                <img src="{{ asset('assets/images/new-logo.png') }}" alt="logo" class="logo-abbr" style="width: 50px">
-                <h1 class="fw-bold text-black m-0 brand-title">KORSERA</h1>
+                <img src="{{ asset('assets/images/new-logo.png') }}" alt="logo" class="logo-abbr"
+                    style="width: 50px">
+                <h1 class="fw-bold text-black m-0 brand-title">KONSERA</h1>
             </a>
 
             <div class="nav-control">
@@ -320,26 +321,6 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     @livewireScripts
 
-    <script>
-        document.addEventListener('livewire:load', function () {
-        Livewire.on('confirm-finish', () => {
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, do it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Emit event untuk menangani konfirmasi di Livewire
-                    Livewire.dispatch('syncPengerjaan');
-                }
-            });
-        });
-    });
-    </script>
     <script>
         function handleLogout(formId) {
             Swal.fire({

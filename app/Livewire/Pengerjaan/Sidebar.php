@@ -6,10 +6,11 @@ use Livewire\Component;
 
 class Sidebar extends Component
 {
-    public $currentIndex=0;
+    public $currentIndex = 0;
     public $instrumens;
-    public $results=[];
-    protected $listeners = ['current_index_question','current_result'];
+    public $results = [];
+    protected $listeners = ['current_index_question', 'current_result'];
+
     public function current_index_question($data)
     {
         $this->currentIndex = $data;
@@ -22,19 +23,13 @@ class Sidebar extends Component
 
     public function changeQuestion($index)
     {
-        $this->dispatch("changeQuestion",$index);
-    }
-
-    public function getKeys()
-    {
-
+        $this->dispatch("changeQuestion", $index);
     }
 
     public function render()
     {
-        // dd($this->results);
-        return view('livewire.pengerjaan.sidebar',[
-            "currentIndex"=> $this->currentIndex+1,
+        return view('livewire.pengerjaan.sidebar', [
+            "currentIndex" => $this->currentIndex + 1,
             "questions" => $this->instrumens->statements,
             "results" => $this->results
         ]);
