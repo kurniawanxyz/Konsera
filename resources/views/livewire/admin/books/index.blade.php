@@ -1,6 +1,6 @@
 <div>
     {{-- Modal --}}
-    <div class="modal fade" id="modalBooks" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <div wire:ignore.self class="modal fade" id="modalBooks" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true" wire:ignore.self>
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -44,7 +44,7 @@
     {{-- Modal --}}
 
     {{-- Modal PDF --}}
-    <div class="modal fade" id="pdfModal" tabindex="-1" role="dialog" aria-labelledby="pdfModalLabel"
+    <div wire:ignore.self class="modal fade" id="pdfModal" tabindex="-1" role="dialog" aria-labelledby="pdfModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
@@ -113,9 +113,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td>
                                     Tidak ada data.
-                                </td>
                             </tr>
                         @endforelse
                     </tbody>
