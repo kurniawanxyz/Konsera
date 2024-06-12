@@ -29,7 +29,7 @@
                 </li>
                 <li>
                     <a wire:navigate href="{{ route('rekap.index') }}" class="ai-icon" aria-expanded="false">
-                        <i class="flaticon-381-book"></i>
+                        <i class="flaticon-381-resume"></i>
                         <span class="nav-text">Rekap Pengerjaan</span>
                     </a>
                 </li>
