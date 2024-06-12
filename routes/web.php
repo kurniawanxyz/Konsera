@@ -49,11 +49,11 @@ Route::prefix('user')->middleware('auth')->group(function () {
     Route::get('dashboard', [DashboardUserController::class, 'index'])->name('user.dashboard');
     Route::resource("user-groups", UserGroupController::class);
     Route::resource("user-instruments", UserInstrumentController::class);
+    Route::get('books', fn () => view('user.books.index'))->name('user.books.index');
 
     Route::controller(PengerjaanController::class)->group(function () {
         Route::get("pengerjaan/{group_id}/{instrumen_id}", "index")->name("pengerjaan.index");
         Route::post("pengerjaan/{group_id}/{instrumen_id}", "store")->name("pengerjaan.store");
-
         Route::get("rekap-pengerjaan/", "rekap")->name("rekap.index");
         Route::get("rekap-pengerjaan/{group_id}/{instrumen_id}", "show")->name("rekap.show");
     });
