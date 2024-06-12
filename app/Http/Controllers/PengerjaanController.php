@@ -63,10 +63,11 @@ class PengerjaanController extends Controller
         $label =[];
 
         foreach($nilaiTiapSubKriteria as $item){
-            if($item->pivot->pointMax > 0){
-                $nilaiPoint[]= ($item->pivot->point/$item->pivot->pointMax) * 100;
+            if($item->pivot->pointMax > 0 && $item->pivot->point > 0){
+                $nilaiPoint[]= number_format(($item->pivot->point/$item->pivot->pointMax) * 100,1);
+            }else{
+                $nilaiPoint[]= 0;
             }
-            $nilaiPoint[]= 0;
 
             $label[]= $item->text;
         }

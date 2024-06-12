@@ -39,6 +39,10 @@
                         <span></span>
                     </div>
                     <p>{{ $item['description'] }}</p>
+                    <div class="mt-3">
+                        <h3 class="fs-5">Solusi yang ditawarkan:</h3>
+                        <p>{{ $item['solutions'] }}</p>
+                    </div>
                 </div>
             </div>
         </div>

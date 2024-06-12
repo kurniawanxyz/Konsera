@@ -73,6 +73,9 @@
         @endforelse
     </tbody>
 </table>
+{{
+    $subCriterias->links("pagination::bootstrap-5")
+}}
 </div>
 @endsection
 

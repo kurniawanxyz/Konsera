@@ -17,10 +17,10 @@ class Index extends Component
     {
         $this->validate([
             'judul' => 'required|string|max:255',
-            'file' => 'required|mimes:pdf'
+            'file' => 'required|file|mimes:pdf'
         ]);
 
-        $raw_name = $this->file->getClientOriginalName();
+        $raw_name = time() . '_' . $this->file->getClientOriginalName();
 
         $name_file = $this->file->storeAs('buku', $raw_name, 'public');
 

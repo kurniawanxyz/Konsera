@@ -4,11 +4,20 @@
         <div class="col-sm-6 p-md-0">
             <div class="welcome-text">
                 <h4>{{ $group->name }}</h4>
-                <p class="mb-0">{{ $group->description }}</p>
             </div>
         </div>
         <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
             <a href="{{ route('user.dashboard') }}" class="btn btn-primary" wire:navigate>Kembali</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">Deskripsi:</div>
+                    <p class="mb-0">{{ $group->description }}</p>
+                </div>
+            </div>
         </div>
     </div>
     {{-- Header --}}
