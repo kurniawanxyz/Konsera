@@ -235,7 +235,7 @@ class InstrumenKonsera extends Seeder
             "text" => "Self-acceptance",
             "description" => "Pribadi yang sehat biasanya senang hidup dan menerima diri mereka sendiri karena mereka hidup dan memiliki kapasitas untuk menikmati diri mereka sendiri. Orang sehat biasanya senang hidup dan menerima diri mereka sendiri hanya karena mereka masih hidup dan memiliki kapasitas untuk menikmati diri mereka sendiri. Mereka menolak mengukur nilai intrinsik mereka dengan pencapaian ekstrinsik mereka atau dengan apa yang orang lain pikirkan tentang mereka. Mereka terus terang memilih untuk memiliki penerimaan diri tanpa syarat, dan mereka berusaha menghindari menilai diri sendiri. Mereka berusaha untuk menikmati daripada membuktikan diri.
             ",
-            "solutions" => `Dalam konteks REBT, solusi yang ditawarkan jika Self-acceptance rendah, dapat melibatkan langkah-langkah berikut:
+            "solutions" => 'Dalam konteks REBT, solusi yang ditawarkan jika Self-acceptance rendah, dapat melibatkan langkah-langkah berikut:
 
 
             a.	Menerapkan Model ABC:
@@ -247,7 +247,7 @@ class InstrumenKonsera extends Seeder
             3)	Discriminating irrational beliefs : Kemudian yang terakhir adalah konseli belajar membedakan kepercayaan irasional (self-defeating) dan kepercayaan rasional (self-helping). Dalam sesi konseling dengan pendekatan REBT, seorang konselor dapat membantu individu mengidentifikasi keyakinan irasional dan menggantinya dengan keyakinan yang lebih rasional. Dalam sesi konseling dengan pendekatan REBT, seorang konselor dapat membantu individu mengidentifikasi keyakinan irasional yang mempengaruhi penerimaan ketidakpastian rendah. Konselor juga dapat membantu individu menggantikan keyakinan irasional tersebut dengan keyakinan yang lebih rasional dan membantu mereka mengembangkan keterampilan menghadapi ketidakpastian.
             c.	 Effect (E)
             Menurut Corey (2009) hasil akhir dari proses A-B-C-D berupa Effect (E).  Suatu sistem keyakinan yang baru dan efektif terdiri dari penggantian pemikiran yang tidak sehat dengan pemikiran yang sehat. Jika berhasil melakukan hal tersebut maka akan timbul new feeling (F) yaitu satu perangkat perasaan yang baru. Dalam sesi konseling dengan pendekatan REBT, Latih diri sendiri untuk mengembangkan afirmasi positif untuk memperkuat self-acceptance. Afirmasi positif adalah pernyataan positif tentang diri sendiri yang diulang secara teratur untuk membantu mengubah pola pikir negatif menjadi positif. Contohnya, mengulang afirmasi seperti "Saya menerima diri saya apa adanya" atau "Saya berharga dan pantas diterima". Selain itu, mengembangkan diri melalui pengembangan keterampilan, minat, dan hobi yang positif. Dengan mengembangkan diri, seseorang dapat merasa lebih percaya diri dan menerima diri sendiri dengan lebih baik. Dukungan dari orang-orang terdekat seperti keluarga, teman, atau profesional kesehatan mental. Dukungan sosial dapat membantu seseorang merasa lebih diterima dan meningkatkan self-acceptance.
-            `,
+            ',
         ])->statements()->createMany([
             ["text" => "Saya akan merasa sakit hati dan kecewa jika mengingat masa lalu saya", "favorable" => "unfav","instrumen_id" => $inst->id],
             ["text" => "Saya kecewa dengan ketidakmampuan saya saat berbicara di depan publik", "favorable" => "unfav","instrumen_id" => $inst->id],
@@ -260,7 +260,7 @@ class InstrumenKonsera extends Seeder
             "text" => "Risk-taking",
             "description" => "Emosi pribadi yang sehat memiliki kecenderungan berani mengambil resiko dan mencoba melakukan apa yang ingin dilakukan. Mereka menganggap itu adalah kesempatan baik meskipun mungkin mereka gagal. Mereka memiliki kecenderungan menjadi petualang tetapi tidak gegabah. Orang yang sehat secara emosional cenderung mengambil risiko dalam jumlah yang cukup mengambil risiko dan mencoba melakukan apa yang ingin mereka lakukan, bahkan ketika ada peluang bagus walaupun mereka mungkin gagal.
             ",
-            "solutions" => `Dalam konteks REBT, solusi yang ditawarkan jika Risk-taking rendah, dapat melibatkan langkah-langkah berikut:
+            "solutions" => 'Dalam konteks REBT, solusi yang ditawarkan jika Risk-taking rendah, dapat melibatkan langkah-langkah berikut:
             a.	Menerapkan Model ABC:
             Menurut Ellis (2002) ada tiga pilar yang membangun tingkah laku individu, yaitu Antecedent event atau Adversities (A), Belief (B), dan Emotional consequence (C). Kerangka pilar ini yang kemudian dikenal dengan konsep atau teori ABC untuk memahami hubungan antara peristiwa, keyakinan, dan konsekuensi emosional. Gunakan model ABC (A = peristiwa, B = keyakinan, C = konsekuensi) untuk memahami hubungan antara peristiwa, keyakinan, dan konsekuensi emosional. Misalkan, Dalam konteks Risk-taking rendah, A (Activating Event): Seseorang dihadapkan pada kesempatan untuk mengambil risiko, seperti memulai bisnis baru atau melakukan aktivitas yang di luar zona nyaman, B (Belief System): Seseorang memiliki pikiran irasional yang menghambat, seperti "Saya tidak akan pernah berhasil" atau "Jika saya gagal, itu berarti saya tidak berharga.", C (Consequence): Seseorang merasa takut, ragu-ragu, atau cemas menghadapi risiko tersebut. Hal ini dapat menghambat kemampuan seseorang untuk mengambil langkah maju dan mencapai potensi penuh mereka.
             b.	Disputing (D) 
@@ -271,7 +271,7 @@ class InstrumenKonsera extends Seeder
 
             c.	 Effect (E)
             Menurut Corey (2009) hasil akhir dari proses A-B-C-D berupa Effect (E).  Suatu sistem keyakinan yang baru dan efektif terdiri dari penggantian pemikiran yang tidak sehat dengan pemikiran yang sehat. Jika berhasil melakukan hal tersebut maka akan timbul new feeling (F) yaitu satu perangkat perasaan yang baru. Membantu klien untuk mengembangkan kesadaran diri yang lebih baik tentang reaksi emosional mereka terhadap risiko. Ini dapat dilakukan melalui teknik mindfulness atau meditasi yang membantu klien untuk tetap tenang dan fokus saat menghadapi situasi berisiko. Kemudian melakukan diskusi dan Refleksi Pengalaman untuk mengajak klien untuk merefleksikan pengalaman mereka dalam mengambil risiko, apa yang mereka pelajari, dan bagaimana perasaan mereka setelah melakukannya. Diskusi ini membantu klien untuk melihat pengambilan risiko sebagai pengalaman belajar yang berharga.
-            `,
+            ',
         ])->statements()->createMany([
             ["text" => "Saya takut dimarahi guru saya jika saya salah dalam menyelesaikan tugas sekolah", "favorable" => "unfav","instrumen_id" => $inst->id],
             ["text" => "Saya lebih memilih untuk menghindari teman yang suka mencemooh orang lain, daripada harus menegurnya dan mendapatkan cemoohannya juga", "favorable" => "unfav","instrumen_id" => $inst->id],
