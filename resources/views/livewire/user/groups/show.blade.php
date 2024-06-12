@@ -34,7 +34,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="tab" href="#profile1">
-                            <i class="flaticon-381-book"></i>
+                            <i class="la la-book me-2"></i>
                             Instrumen</a>
                     </li>
                 </ul>

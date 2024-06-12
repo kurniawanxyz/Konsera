@@ -38,14 +38,14 @@ Route::middleware('guest')->group(function () {
     Route::get('/', [LandingPageController::class, 'index'])->name('landing-page');
 });
 
-// Route untuk usesr yang sudah terautentifikasi
+// Route untuk user yang sudah terautentifikasi
 Route::middleware("auth")->group(function () {
     Route::post("/logout", [AuthController::class, "logout"])->name("auth.logout");
     Route::resource('profile', ProfileController::class)->only('index');
 });
 
 // Route untuk role user
-Route::prefix('user')->middleware('auth')->group(function () {
+Route::prefix('user')->middleware('auth', 'user')->group(function () {
     Route::get('dashboard', [DashboardUserController::class, 'index'])->name('user.dashboard');
     Route::resource("user-groups", UserGroupController::class);
     Route::resource("user-instruments", UserInstrumentController::class);
@@ -60,7 +60,7 @@ Route::prefix('user')->middleware('auth')->group(function () {
 });
 
 // Route untuk role admin
-Route::prefix("admin")->middleware('auth')->group(function () {
+Route::prefix("admin")->middleware('auth', 'admin')->group(function () {
     Route::get("dashboard",[AdminDashboardController::class,"index"])->name("admin.dashboard");
     Route::resource("groups", GroupController::class);
     Route::resource("instruments", InstrumenController::class);

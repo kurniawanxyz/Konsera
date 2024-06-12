@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-            <a href="{{ url()->previous() }}" class="btn btn-primary" wire:navigate>Kembali</a>
+            <a href="{{ route('user.dashboard') }}" class="btn btn-primary" wire:navigate>Kembali</a>
         </div>
     </div>
     {{-- Header --}}

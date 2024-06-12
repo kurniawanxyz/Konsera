@@ -17,15 +17,12 @@ class Index extends Component
     public $questions = [];
     public $point = 0;
     public $currentQuestionIndex = 0;
-    public $question =[];
+    public $question = [];
     public $answer;
     public $jawaban_id;
-    public $hasiPekerjaan=[];
+    public $hasiPekerjaan = [];
 
     protected $listeners = ["changeQuestion"];
-
-    
-
 
     public function changeQuestion($data)
     {
@@ -34,66 +31,67 @@ class Index extends Component
         $this->shareCurrentIndex();
         $this->shareCurentResult();
     }
-    // public $jawaban_id;
+
     public function syncPengerjaan()
     {
-        try{
+        try {
             $this->calculationPoint();
             $user = auth()->user();
             $instrumen_id = $this->instrumens->id;
             $point = 0;
-            
+
 
             foreach ($this->hasiPekerjaan as $key => $value) {
                 $stm = Statement::findOrFail($key)->favorable;
-                $jwb = Answer::findOrFail($value); 
-                if($stm == "fav"){
-    
+                $jwb = Answer::findOrFail($value);
+                if ($stm == "fav") {
+
                     $point = $point + $jwb->point_fav;
-                }else{
+                } else {
                     $point = $point + $jwb->point_unfav;
                 }
             }
 
             $criteria = $this->instrumens->criteria()
-            ->where('point_min', '<=', $point)
-            ->where('point_max', '>=', $point)
-            ->first();
+                ->where('point_min', '<=', $point)
+                ->where('point_max', '>=', $point)
+                ->first();
             $subCriterias = $this->instrumens->sub_criterias;
-            $pointMax = Answer::orderBy("point_fav","desc")->where("instrumen_id",$this->instrumens->id)->first();
-            foreach($subCriterias as $data){
+            $pointMax = Answer::orderBy("point_fav", "desc")->where("instrumen_id", $this->instrumens->id)->first();
+            foreach ($subCriterias as $data) {
                 $pointPerSubKriteria = 0;
-                foreach($data->statements as $stm){
+                foreach ($data->statements as $stm) {
                     $jwb = Answer::findOrFail($this->hasiPekerjaan[$stm->id]);
-                    if($stm->favorable == "fav"){
-                        $pointPerSubKriteria = $pointPerSubKriteria+$jwb->point_fav;
-                    }else{
-                        $pointPerSubKriteria = $pointPerSubKriteria+$jwb->point_unfav;
+                    if ($stm->favorable == "fav") {
+                        $pointPerSubKriteria = $pointPerSubKriteria + $jwb->point_fav;
+                    } else {
+                        $pointPerSubKriteria = $pointPerSubKriteria + $jwb->point_unfav;
                     }
                 }
 
                 $persentase = 0.0;
-                if($pointPerSubKriteria != 0){
-                    $persentase = $pointPerSubKriteria/(count($data->statements)*$pointMax->point_fav);
+                if ($pointPerSubKriteria != 0) {
+                    $persentase = $pointPerSubKriteria / (count($data->statements) * $pointMax->point_fav);
                     $persentase *= 100;
                 }
 
-                $status="";
-                if($persentase >= 75.0){
+                $status = "";
+                if ($persentase >= 75.0) {
                     $status = "tinggi";
-                }else if($persentase >= 40.0){
+                } else if ($persentase >= 40.0) {
                     $status = "sedang";
-                }else{
+                } else {
                     $status = "rendah";
                 }
-                $tes= $user->nilaiTiapSubKriteria()->syncWithoutDetaching([
-                    $data->id => [
-                        "group_id"=> $this->group_id,
-                        "instrumen_id" => $instrumen_id,
-                        "point" => $pointPerSubKriteria,
-                        "pointMax" => (count($data->statements)*$pointMax->point_fav),
-                        "status" => $status,
-                    ]
+                $tes = $user->nilaiTiapSubKriteria()->syncWithoutDetaching(
+                    [
+                        $data->id => [
+                            "group_id" => $this->group_id,
+                            "instrumen_id" => $instrumen_id,
+                            "point" => $pointPerSubKriteria,
+                            "pointMax" => (count($data->statements) * $pointMax->point_fav),
+                            "status" => $status,
+                        ]
                     ]
                 );
             }
@@ -106,24 +104,24 @@ class Index extends Component
                 ]
             ]);
 
-
-
-            session()->flash("success","Berhasil mengumpulkan jawaban");
+            session()->flash("success", "Berhasil mengumpulkan jawaban");
             return $this->redirectRoute("user.dashboard");
-        }catch(Exception $e){
+        } catch (Exception $e) {
             Log::debug('Sync data:', [
                 "message" => $e->getMessage(),
             ]);
-            session()->flash("error",$e->getMessage());
+            session()->flash("error", $e->getMessage());
         }
         // Dapatkan user yang sedang terautentikasi
     }
-    public function mount(){
+
+    public function mount()
+    {
         $this->questions = $this->instrumens->statements;
-        foreach($this->questions as $i => &$question){
+        foreach ($this->questions as $i => &$question) {
             $question["point"] = 0;
-            $question["no"] = $i+1 ;
-            $question["index"] = $i ;
+            $question["no"] = $i + 1;
+            $question["index"] = $i;
             $question["jawaban_id"] = null;
             unset($question["instrumen_id"]);
             unset($question["sub_kriteria_id"]);
@@ -133,8 +131,6 @@ class Index extends Component
         $this->question = $this->questions[$this->currentQuestionIndex];
         $this->answer = $this->instrumens->answer()->get();
         $this->jawaban_id = $this->answer->first()->id;
-        // if ($this->answer->isNotEmpty()) {
-        // }
     }
 
     public function nextQuestion()
@@ -166,17 +162,17 @@ class Index extends Component
     public function shareCurrentIndex()
     {
         $this->shareCurentResult();
-        $this->dispatch("current_index_question",$this->currentQuestionIndex);
-    }
-    
-    public function shareCurentResult(){
-        $this->dispatch("current_result",$this->hasiPekerjaan);
+        $this->dispatch("current_index_question", $this->currentQuestionIndex);
     }
 
+    public function shareCurentResult()
+    {
+        $this->dispatch("current_result", $this->hasiPekerjaan);
+    }
 
     public function render()
     {
-        return view('livewire.pengerjaan.index',[
+        return view('livewire.pengerjaan.index', [
             "question" => $this->question,
             "hasil" => $this->hasiPekerjaan,
             "opsi_answer" => $this->answer,
