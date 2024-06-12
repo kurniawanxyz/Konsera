@@ -247,7 +247,7 @@
                         </a>
                     </li>
                     <li><a href="{{ route('instruments.index') }}" class="ai-icon" aria-expanded="false">
-                            <i class="flaticon-381-book"></i>
+                            <i class="flaticon-381-bookmark-1"></i>
                             <span class="nav-text">Instrumen</span>
                         </a>
                     </li>
@@ -257,15 +257,6 @@
                         </a>
                     </li>
                 </ul>
-                {{--
-				<div class="book-box">
-					<img src="images/book.png" alt="">
-					<a href="javascript:void(0);">Generate Report  ></a>
-				</div>
-				<div class="copyright">
-					<p><strong>Kripton Crypto Admin Dashboard</strong> © 2022 All Rights Reserved</p>
-					<p class="fs-12">Made with <span class="heart"></span> by DexignZone</p>
-				</div> --}}
             </div>
         </div>
         <!--**********************************

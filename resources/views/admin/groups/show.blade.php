@@ -78,7 +78,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Judul</th>
-                                        {{-- <th></th> --}}
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -86,6 +86,9 @@
                                     <tr>
                                         <td>{{$i+1}}</td>
                                         <td>{{$item->title}}</td>
+                                        <td>
+                                            <a href="{{route('admin.download.rekap',["group_id"=>$group->id,"instrumen_id"=>$item->id])}}" class="btn btn-primary">Export PDF</a>
+                                        </td>
                                     </tr>
                                     @empty
 

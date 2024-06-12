@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminRekapController;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\AuthController;
@@ -60,7 +61,7 @@ Route::prefix('user')->middleware('auth')->group(function () {
 
 // Route untuk role admin
 Route::prefix("admin")->middleware('auth')->group(function () {
-    Route::get("dashboard", fn () => view("admin.dashboard"))->name("admin.dashboard");
+    Route::get("dashboard",[AdminDashboardController::class,"index"])->name("admin.dashboard");
     Route::resource("groups", GroupController::class);
     Route::resource("instruments", InstrumenController::class);
     Route::resource('books', BooksController::class);
@@ -113,5 +114,6 @@ Route::prefix("admin")->middleware('auth')->group(function () {
 
     Route::controller(AdminRekapController::class)->group(function(){
         Route::get("rekap/{user_id}/{instrumen_id}/{group_id}","index")->name("admin.rekap.index");
+        Route::get("download-rekap/{instrumen_id}/{group_id}","downloadRekap")->name("admin.download.rekap");
     });
 });

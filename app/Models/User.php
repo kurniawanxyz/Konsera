@@ -55,12 +55,19 @@ class User extends Authenticatable
         return $this->belongsToMany(Instrumen::class, 'pengerjaan')->withPivot(["group_id","points","criteria_id"]);
     }
 
-    public function pengerjaanByGroup(): BelongsToMany
+
+    public function criteria(): BelongsToMany
     {
-        return $this->belongsToMany(Group::class, 'pengerjaan')
-                    ->withPivot('instrumen_id', 'points')
-                    ->withTimestamps();
+        return $this->belongsToMany(Criteria::class, 'pengerjaan')
+                    ->withPivot(['group_id', 'points', 'instrumen_id'])
+                    ->as('pengerjaan')
+                    ->withTimestamps()
+                    ->using(Pengerjaan::class)
+                    ->with(['instrumen' => function ($query) {
+                        $query->select('id', 'title'); // Assuming 'name' is a column in the instrumen table
+                    }]);
     }
+
     /**
      * Fungsi untuk mengecek apakah user adalah anggota grup terkait
      *

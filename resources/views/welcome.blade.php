@@ -892,7 +892,7 @@
         </section> --}}
         <!-- ***** FAQ Area End ***** -->
 
-        <!-- ***** Team Area Start ***** -->
+        {{-- <!-- ***** Team Area Start ***** -->
         <section id="tim" class="section team-area team-style-two overflow-hidden ptb_100" id="tim">
             <div class="container">
                 <div class="row justify-content-center">
@@ -951,7 +951,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- ***** Team Area End ***** -->
 
         <!-- ***** Download Area Start ***** -->
