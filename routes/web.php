@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminRekapController;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BooksController;
@@ -108,5 +109,9 @@ Route::prefix("admin")->middleware('auth')->group(function () {
         Route::get("answer/{answer}/edit", "edit")->name("answer.edit");
         Route::put("answer/{answer}/update", "update")->name("answer.update");
         Route::delete("answer/{answer}/destroy", "destroy")->name("answer.destroy");
+    });
+
+    Route::controller(AdminRekapController::class)->group(function(){
+        Route::get("rekap/{user_id}/{instrumen_id}/{group_id}","index")->name("admin.rekap.index");
     });
 });

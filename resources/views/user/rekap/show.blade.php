@@ -5,7 +5,8 @@
         <div class="card">
             <div class="card-body">
                 <h1 class="card-title">Rekap Nilai </h1>
-                <p>Kamu mendapatkan <span class="badge bg-info">{{$rekap['pengerjaan']['pivot']['points']}} point</span>, kamu tergolong dalam kriteria <span class="badge bg-info">{{$rekap['criteria']['text']}}</span> </p>
+                <p>Kamu mendapatkan <span class="badge bg-info">{{ $rekap['pengerjaan']['pivot']['points'] }} point</span>,
+                    kamu tergolong dalam kriteria <span class="badge bg-info">{{ $rekap['criteria']['text'] }}</span> </p>
             </div>
         </div>
     </div>
@@ -37,7 +38,7 @@
                         @endif
                         <span></span>
                     </div>
-                    <p>{{$item['description']}}</p>
+                    <p>{{ $item['description'] }}</p>
                 </div>
             </div>
         </div>
@@ -54,44 +55,50 @@
         const data = {
             labels: labels,
             datasets: [{
-                label: 'Nilai Berdasarkan Sub Kriteria/Variabel',
-                data: @json($rekap['nilaiPoin']),
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 205, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(201, 203, 207, 0.2)'
-                ],
-                borderColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(255, 159, 64)',
-                    'rgb(255, 205, 86)',
-                    'rgb(75, 192, 192)',
-                    'rgb(54, 162, 235)',
-                    'rgb(153, 102, 255)',
-                    'rgb(201, 203, 207)'
-                ],
-                borderWidth: 1
-            }]
+                    label: 'Nilai Berdasarkan Sub Kriteria/Variabel',
+                    data: @json($rekap['nilaiPoin']),
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 205, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(201, 203, 207, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(255, 159, 64)',
+                        'rgb(255, 205, 86)',
+                        'rgb(75, 192, 192)',
+                        'rgb(54, 162, 235)',
+                        'rgb(153, 102, 255)',
+                        'rgb(201, 203, 207)'
+                    ],
+                    borderWidth: 1
+                }
+            ]
         };
         const config = {
-            type: 'bar',
+            type: 'horizontalBar', // Mengubah tipe chart menjadi horizontalBar
             data: data,
             options: {
+                indexAxis: 'y', // Mengatur sumbu indeks menjadi sumbu Y
                 scales: {
-                    y: {
-                        min: 0, // Set minimum value for y-axis
+                    x: { // Mengatur skala untuk sumbu X
+                        min: 0, // Set nilai minimum untuk sumbu X
                         max: 100,
                         ticks: {
                             stepSize: 10
                         }
+                    },
+                    y: { // Mengatur skala untuk sumbu Y
+                        // Anda bisa menambahkan konfigurasi tambahan untuk sumbu Y di sini
                     }
                 }
-            },
+            }
         };
+
         const ctx = $("#tes");
         new Chart(ctx, config)
     </script>

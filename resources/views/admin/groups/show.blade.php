@@ -54,9 +54,9 @@
                                                 <a href="#" class="btn btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Rekap</a>
                                                 <div class="dropdown-menu">
                                                     @forelse ($group->instrumens as $data)
-                                                        <a style="cursor: pointer;" class="dropdown-item">{{$data->title}}</a>
+                                                        <a href="{{route('admin.rekap.index',["user_id" => $item->id,"instrumen_id" => $data->id,"group_id" => $group->id])}}" style="cursor: pointer;" class="dropdown-item">{{$data->title}}</a>
                                                     @empty
-                                                        <a style="cursor: pointer;" class="dropdown-item">Tidak adad instrumens</a>    
+                                                        <a style="cursor: pointer;" class="dropdown-item">Tidak adad instrumens</a>
                                                     @endforelse
                                                 </div>
                                             </div>
@@ -88,7 +88,7 @@
                                         <td>{{$item->title}}</td>
                                     </tr>
                                     @empty
-                                        
+
                                     @endforelse
                                 </tbody>
                                </table>
