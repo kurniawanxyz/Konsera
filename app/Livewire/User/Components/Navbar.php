@@ -49,7 +49,7 @@ class Navbar extends Component
                 $this->dispatch('joined-group', message: 'Berhasil bergabung dengan grup');
             } else {
                 $user_id = auth()->id();
-                User::findOrFail($user_id)->groups()->sync($group->id);
+                User::findOrFail($user_id)->groups()->attach($group->id);
 
                 $this->text = 'Berhasil bergabung dengan group';
                 $this->resetExcept('text', 'class');
