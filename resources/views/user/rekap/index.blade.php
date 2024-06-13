@@ -28,8 +28,8 @@
                     <thead>
                         <tr>
                             <th style="width:80px;"><strong>No.</strong></th>
-                            <th><strong>Group</strong></th>
                             <th><strong>Instrumen</strong></th>
+                            <th><strong>Group</strong></th>
                             <th><strong>Kriteria</strong></th>
                             <th><strong>Aksi</strong></th>
                         </tr>

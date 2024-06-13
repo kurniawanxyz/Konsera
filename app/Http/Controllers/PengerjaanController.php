@@ -52,7 +52,7 @@ class PengerjaanController extends Controller
         }
     }
 
-    public function show($instrumen_id)
+    public function show($group_id,$instrumen_id)
     {
         $data = auth()->user()->pengerjaanByInstrumen()->where("instrumen_id", $instrumen_id)->first();
         $nilaiTiapSubKriteria = auth()->user()->nilaiTiapSubKriteria;
@@ -70,9 +70,8 @@ class PengerjaanController extends Controller
         }
         $nilaiPoint[] = 0;
         $nilaiPoint[] = 100;
-
         $rekap = [
-            "group" => Group::findOrFail($data->pivot->group_id),
+            "group" => Group::findOrFail($group_id),
             "criteria" => Criteria::findOrFail($data->pivot->criteria_id),
             "instrumen" => Instrumen::findOrFail($data->pivot->instrumen_id),
             "pivot" => $data->pivot,
