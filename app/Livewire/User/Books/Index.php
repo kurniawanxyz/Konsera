@@ -27,6 +27,7 @@ class Index extends Component
 
             $this->notify('Berhasil', 'Berhasil mengunduh buku', 'success');
         } catch (Exception $e) {
+            dd($e, $e->getMessage());
             $this->notify('Gagal', 'Gagal mengunduh buku', 'error');
         }
     }
