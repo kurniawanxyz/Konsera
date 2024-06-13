@@ -1,7 +1,7 @@
 <div>
     {{-- Modal --}}
     <div wire:ignore.self class="modal fade" id="modalBooks" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true" wire:ignore.self>
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -21,7 +21,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="file">File</label>
+                        <label class="form-label" for="file">File <span class="text-warning" wire:loading wire:target="file">(Sedang mengunggah file..)</span></label>
                         <input class="form-control @error('file') is-invalid @enderror" type="file" accept=".pdf"
                             wire:model="file">
                         @error('file')
