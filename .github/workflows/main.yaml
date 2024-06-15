@@ -23,7 +23,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           local-dir: ./
-          server-dir: public_html/konsera.kaitodecode.com/
+          server-dir: ./
           exclude: |
             .git*
             node_modules*
