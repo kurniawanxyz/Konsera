@@ -21,13 +21,12 @@ class Index extends Component
         try {
             $book = Books::findOrfail($bookId);
 
-            $file_path = \public_path(Storage::url($book->file));
-
-            return response()->download($file_path);
+            $file_path = public_path('storage/'.$book->file);
 
             $this->notify('Berhasil', 'Berhasil mengunduh buku', 'success');
+
+            return response()->download($file_path);
         } catch (Exception $e) {
-            dd($e, $e->getMessage());
             $this->notify('Gagal', 'Gagal mengunduh buku', 'error');
         }
     }
