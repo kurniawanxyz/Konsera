@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId("instrumen_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string("text");
-            $table->text("description");
-            $table->text("solutions")->nullable();
+            $table->longText("description");
+            $table->longText("solutions")->nullable();
             $table->timestamps();
         });
     }
