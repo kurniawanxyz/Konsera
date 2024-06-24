@@ -72,7 +72,7 @@
                             </div>
                             <div class="d-flex flex-column mt-3">
                                 <h4>Solusi yang ditawarkan:</h4>
-                                <p>{{$item->solutions??"Belum mengatur solusi"}}</p>
+                                <p>{!! $item->solutions??"Belum mengatur solusi" !!}</p>
                             </div>
                         </div>
                     </div>
